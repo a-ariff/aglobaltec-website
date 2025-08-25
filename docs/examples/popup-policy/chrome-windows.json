@@ -1,0 +1,16 @@
+{
+  "PopupsAllowedForUrls": [
+    "https://*.company.com",
+    "https://app.salesforce.com",
+    "https://*.office.com",
+    "https://portal.azure.com",
+    "https://*.sharepoint.com"
+  ],
+  "PopupsBlockedForUrls": [
+    "https://*.doubleclick.net",
+    "https://*.googlesyndication.com",
+    "https://*.googleadservices.com",
+    "https://*.adsystem.com"
+  ],
+  "DefaultPopupsSetting": 2
+}
