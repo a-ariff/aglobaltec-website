@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.apple.Safari</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.company.safari.popup.policy</string>
+      <key>PayloadDisplayName</key>
+      <string>Safari Popup Policy</string>
+      <key>BlockPopUpWindows</key>
+      <true/>
+      <key>SafariAllowPopUpsAndRedirects</key>
+      <false/>
+    </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>Safari popup management policy</string>
+  <key>PayloadDisplayName</key>
+  <string>Safari Popup Policy</string>
+  <key>PayloadIdentifier</key>
+  <string>com.company.safari.popup.policy</string>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>11223344-5566-7788-9900-112233445566</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
