@@ -1,7 +1,7 @@
 ---
 title: 'Popup Policy Management Guide'
 description: 'Comprehensive guide for managing browser popup policies across Windows and macOS using Microsoft Intune'
-pubDate: 'Aug 25 2025'
+pubDate: '2025-08-25'
 heroImage: '/assets/blog-placeholder-3.jpg'
 ---
 
@@ -17,7 +17,7 @@ Ready-to-use policy templates and configuration profiles are available for immed
 ### macOS Configuration Profiles (PLIST Format)
 
 - [Chrome macOS Profile](../../../docs/examples/popup-policy/chrome-macos.plist) - Ready-to-deploy configuration profile for Chrome on macOS
-- [Edge macOS Profile](../../../docs/examples/popup-policy/edge-macos.plist) - Ready-to-deploy configuration profile for Microsoft Edge on macOS  
+- [Edge macOS Profile](../../../docs/examples/popup-policy/edge-macos.plist) - Ready-to-deploy configuration profile for Microsoft Edge on macOS
 - [Safari macOS Profile](../../../docs/examples/popup-policy/safari-macos.plist) - Ready-to-deploy configuration profile for Safari on macOS
 
 ## Checksums
@@ -85,7 +85,7 @@ Verify file integrity using these SHA256 checksums:
 ```json
 {
   "@odata.type": "#microsoft.graph.deviceManagementConfigurationPolicy",
-  "name": "Edge Popup Policy", 
+  "name": "Edge Popup Policy",
   "description": "Manages popup settings for Microsoft Edge browsers",
   "platforms": "windows10",
   "technologies": "mdm",
@@ -110,28 +110,27 @@ Verify file integrity using these SHA256 checksums:
 ### Chrome OMA-URI (Windows/Intune)
 
 ```xml
-<data id="PopupsAllowedForUrlsDesc" value="1📍https://*.company.com📍2📍https://app.salesforce.com📍3📍https://*.office.com"></data>
+<data id="PopupsAllowedForUrlsDesc" value="1📍https://*.company.com📍2📍https://app.salesforce.com📍3📍https://*.office.com"/>
 ```
 
 ### Edge OMA-URI (Windows/Intune)
 
 ```xml
-<data id="PopupsAllowedForUrlsDesc" value="1📍https://*.company.com📍2📍https://portal.office.com📍3📍https://*.sharepoint.com"></data>
+<data id="PopupsAllowedForUrlsDesc" value="1📍https://*.company.com📍2📍https://portal.office.com📍3📍https://*.sharepoint.com"/>
 ```
 
 ### Default Popup Setting (Both Chrome & Edge)
 
 ```xml
-<data id="DefaultPopupsSetting" value="2"></data>
+<data id="DefaultPopupsSetting" value="2"/>
 ```
 
 ## Copy Button Enhancement
 
-<script>
+```javascript
 // Add copy-to-clipboard functionality for code blocks
 document.addEventListener('DOMContentLoaded', function() {
   const codeBlocks = document.querySelectorAll('pre code');
-  
   codeBlocks.forEach(function(codeBlock) {
     const pre = codeBlock.parentNode;
     const button = document.createElement('button');
@@ -150,9 +149,9 @@ document.addEventListener('DOMContentLoaded', function() {
     pre.appendChild(button);
   });
 });
-</script>
+```
 
-<style>
+```css
 .copy-button {
   position: absolute;
   top: 8px;
@@ -183,7 +182,7 @@ pre code {
   background: #f6f8fa;
   border-radius: 6px;
 }
-</style>
+```
 
 ## Support & Resources
 
