@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>PayloadContent</key>
+  <array>
+    <dict>
+      <key>PayloadType</key>
+      <string>com.google.Chrome</string>
+      <key>PayloadVersion</key>
+      <integer>1</integer>
+      <key>PayloadIdentifier</key>
+      <string>com.company.chrome.popup.policy</string>
+      <key>PayloadDisplayName</key>
+      <string>Chrome Popup Policy</string>
+      <key>PopupsAllowedForUrls</key>
+      <array>
+        <string>https://*.company.com</string>
+        <string>https://app.salesforce.com</string>
+        <string>https://*.office.com</string>
+      </array>
+      <key>PopupsBlockedForUrls</key>
+      <array>
+        <string>https://*.doubleclick.net</string>
+        <string>https://*.googlesyndication.com</string>
+      </array>
+      <key>DefaultPopupsSetting</key>
+      <integer>2</integer>
+    </dict>
+  </array>
+  <key>PayloadDescription</key>
+  <string>Chrome popup management policy</string>
+  <key>PayloadDisplayName</key>
+  <string>Chrome Popup Policy</string>
+  <key>PayloadIdentifier</key>
+  <string>com.company.chrome.popup.policy</string>
+  <key>PayloadType</key>
+  <string>Configuration</string>
+  <key>PayloadUUID</key>
+  <string>12345678-1234-1234-1234-123456789012</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
