@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>BlockStoragePolicy</key>
+  <integer>2</integer>
+  <key>WebKitJavaScriptCanOpenWindowsAutomatically</key>
+  <false/>
+  <key>SafariAllowPopups</key>
+  <false/>
+  <key>WhitelistedDomains</key>
+  <array>
+    <string>trusted-site.com</string>
+    <string>example.org</string>
+    <string>allowed-domain.net</string>
+  </array>
+  <key>BlockedDomains</key>
+  <array>
+    <string>malicious-site.com</string>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>Safari Popup Policy</string>
+  <key>PayloadDescription</key>
+  <string>Blocks popups by default with specific allow-list for trusted domains</string>
+  <key>PayloadIdentifier</key>
+  <string>com.company.safari.popup-policy</string>
+  <key>PayloadType</key>
+  <string>com.apple.Safari</string>
+  <key>PayloadUUID</key>
+  <string>ABCD1234-ABCD-1234-ABCD-1234567890EF</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
