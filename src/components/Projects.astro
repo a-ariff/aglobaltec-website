@@ -1,0 +1,276 @@
+---
+// Projects component script
+---
+
+<section class="projects" id="projects">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">A showcase of my recent work and technical expertise</p>
+    </div>
+    
+    <div class="projects-grid">
+      <article class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="400" height="250" fill="var(--accent-color)" opacity="0.1" rx="10"/>
+              <rect width="300" height="150" x="50" y="50" fill="var(--accent-color)" opacity="0.2" rx="5"/>
+              <circle cx="120" cy="100" r="20" fill="var(--accent-color)" opacity="0.3"/>
+              <rect width="100" height="8" x="160" y="90" fill="var(--accent-color)" opacity="0.3" rx="4"/>
+              <rect width="120" height="6" x="160" y="110" fill="var(--accent-color)" opacity="0.2" rx="3"/>
+            </svg>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="btn btn-small btn-primary" aria-label="View live demo">Demo</a>
+              <a href="#" class="btn btn-small btn-secondary" aria-label="View source code">Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">E-Commerce Platform</h3>
+          <p class="project-description">
+            A full-featured e-commerce platform built with React and Node.js, featuring 
+            user authentication, payment processing, and real-time inventory management.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Node.js</span>
+            <span class="tech-tag">MongoDB</span>
+            <span class="tech-tag">Stripe</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="400" height="250" fill="var(--accent-color)" opacity="0.1" rx="10"/>
+              <rect width="320" height="180" x="40" y="35" fill="var(--accent-color)" opacity="0.2" rx="8"/>
+              <rect width="280" height="20" x="60" y="60" fill="var(--accent-color)" opacity="0.3" rx="10"/>
+              <rect width="200" height="12" x="60" y="90" fill="var(--accent-color)" opacity="0.2" rx="6"/>
+              <rect width="150" height="12" x="60" y="110" fill="var(--accent-color)" opacity="0.2" rx="6"/>
+            </svg>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="btn btn-small btn-primary" aria-label="View live demo">Demo</a>
+              <a href="#" class="btn btn-small btn-secondary" aria-label="View source code">Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Task Management App</h3>
+          <p class="project-description">
+            A collaborative task management application with real-time updates, 
+            drag-and-drop functionality, and team collaboration features.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">Vue.js</span>
+            <span class="tech-tag">Socket.io</span>
+            <span class="tech-tag">Express</span>
+            <span class="tech-tag">PostgreSQL</span>
+          </div>
+        </div>
+      </article>
+      
+      <article class="project-card">
+        <div class="project-image">
+          <div class="image-placeholder">
+            <svg viewBox="0 0 400 250" width="400" height="250" xmlns="http://www.w3.org/2000/svg" fill="none">
+              <rect width="400" height="250" fill="var(--accent-color)" opacity="0.1" rx="10"/>
+              <rect width="350" height="200" x="25" y="25" fill="var(--accent-color)" opacity="0.2" rx="5"/>
+              <circle cx="100" cy="80" r="15" fill="var(--accent-color)" opacity="0.4"/>
+              <circle cx="200" cy="120" r="25" fill="var(--accent-color)" opacity="0.3"/>
+              <circle cx="300" cy="100" r="20" fill="var(--accent-color)" opacity="0.3"/>
+              <path d="M100 80 L200 120 L300 100" stroke="var(--accent-color)" stroke-width="2" opacity="0.3"/>
+            </svg>
+          </div>
+          <div class="project-overlay">
+            <div class="project-links">
+              <a href="#" class="btn btn-small btn-primary" aria-label="View live demo">Demo</a>
+              <a href="#" class="btn btn-small btn-secondary" aria-label="View source code">Code</a>
+            </div>
+          </div>
+        </div>
+        <div class="project-content">
+          <h3 class="project-title">Data Visualization Dashboard</h3>
+          <p class="project-description">
+            An interactive dashboard for data visualization and analytics, 
+            featuring dynamic charts, real-time data updates, and export capabilities.
+          </p>
+          <div class="project-tech">
+            <span class="tech-tag">D3.js</span>
+            <span class="tech-tag">React</span>
+            <span class="tech-tag">Python</span>
+            <span class="tech-tag">FastAPI</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    
+    <div class="projects-cta">
+      <a href="#contact" class="btn btn-primary">Let's Work Together</a>
+      <a href="https://github.com/a-ariff" class="btn btn-secondary">View All Projects</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    padding: 6rem 0;
+    background: var(--bg-color);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  
+  .project-card {
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-image {
+    position: relative;
+    height: 250px;
+    overflow: hidden;
+  }
+  
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .project-card:hover .project-overlay {
+    opacity: 1;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .project-content {
+    padding: 1.5rem;
+  }
+  
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 0.75rem;
+  }
+  
+  .project-description {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .tech-tag {
+    background: var(--accent-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+  
+  .btn-small {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .projects-cta {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  @media (max-width: 768px) {
+    .projects {
+      padding: 4rem 0;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .section-title {
+      font-size: 2rem;
+    }
+    
+    .project-card {
+      margin: 0 1rem;
+    }
+    
+    .projects-cta {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+</style>
