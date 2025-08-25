@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>DefaultPopupsSetting</key>
+  <integer>2</integer>
+  <key>PopupsAllowedForUrls</key>
+  <array>
+    <string>https://trusted-site.com</string>
+    <string>https://example.org</string>
+    <string>https://allowed-domain.net</string>
+  </array>
+  <key>PopupsBlockedForUrls</key>
+  <array>
+    <string>https://malicious-site.com</string>
+  </array>
+  <key>PayloadDisplayName</key>
+  <string>Microsoft Edge Popup Policy</string>
+  <key>PayloadDescription</key>
+  <string>Blocks popups by default with specific allow-list for trusted domains</string>
+  <key>PayloadIdentifier</key>
+  <string>com.company.edge.popup-policy</string>
+  <key>PayloadType</key>
+  <string>com.microsoft.Edge</string>
+  <key>PayloadUUID</key>
+  <string>87654321-4321-4321-4321-987654321CBA</string>
+  <key>PayloadVersion</key>
+  <integer>1</integer>
+</dict>
+</plist>
