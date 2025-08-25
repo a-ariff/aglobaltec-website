@@ -1,0 +1,183 @@
+---
+// Hero component script (if needed)
+---
+
+<section class="hero">
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          Hi, I'm <span class="accent">Ariff</span>
+        </h1>
+        <h2 class="hero-subtitle">
+          Frontend Developer & Designer
+        </h2>
+        <p class="hero-description">
+          I create beautiful, responsive web experiences with modern technologies. 
+          Passionate about clean code, user experience, and bringing digital ideas to life.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#projects" class="btn btn-secondary">View My Work</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-image">
+        <!-- Placeholder for profile image or illustration -->
+        <div class="profile-placeholder">
+          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="100" cy="100" r="100" fill="var(--accent-color)" opacity="0.1"/>
+            <circle cx="100" cy="80" r="30" fill="var(--accent-color)" opacity="0.3"/>
+            <ellipse cx="100" cy="140" rx="45" ry="25" fill="var(--accent-color)" opacity="0.3"/>
+          </svg>
+        </div>
+      </div>
+      <div class="floating-elements">
+        <div class="floating-element element-1">💻</div>
+        <div class="floating-element element-2">🎨</div>
+        <div class="floating-element element-3">⚡</div>
+        <div class="floating-element element-4">🚀</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+
+  .hero-content {
+    z-index: 2;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+    max-width: 500px;
+  }
+
+  .accent {
+    color: var(--accent-color);
+  }
+
+  .hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .profile-placeholder {
+    position: relative;
+    z-index: 1;
+  }
+
+  .floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  .floating-element {
+    position: absolute;
+    font-size: 2rem;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .element-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: -1s;
+  }
+
+  .element-2 {
+    top: 10%;
+    right: 20%;
+    animation-delay: -3s;
+  }
+
+  .element-3 {
+    bottom: 30%;
+    left: 20%;
+    animation-delay: -2s;
+  }
+
+  .element-4 {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: -4s;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-container {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+    }
+
+    .hero-cta {
+      justify-content: center;
+    }
+
+    .floating-element {
+      display: none;
+    }
+  }
+</style>
