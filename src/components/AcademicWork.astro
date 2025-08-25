@@ -1,0 +1,81 @@
+---
+/* Academic Work component for MIT assignments */
+---
+
+<section class="academic-section">
+  <div class="container">
+    <h2>Academic Work</h2>
+    <p class="section-subtitle">Master of Information Technology — Cybersecurity Focus (Whitecliffe College, 2026)</p>
+    
+    <div class="academic-grid">
+      <div class="academic-card">
+        <div class="academic-header">
+          <h3>Technology Management</h3>
+          <span class="assignment-type">Strategic Analysis</span>
+        </div>
+        <p>Executive analysis of IT governance frameworks and digital transformation strategies for enterprise environments.</p>
+        <div class="methodology">
+          <h4>Key Frameworks:</h4>
+          <ul>
+            <li>ITIL v4 Service Management</li>
+            <li>COBIT 2019 Governance</li>
+            <li>TOGAF Enterprise Architecture</li>
+            <li>Digital Transformation Models</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="academic-card">
+        <div class="academic-header">
+          <h3>User-Centered Intelligent Systems (UCIS)</h3>
+          <span class="assignment-type">Research Project</span>
+        </div>
+        <p>Research and implementation of intelligent systems design with focus on IoT security, smart automation, and AI integration.</p>
+        <div class="methodology">
+          <h4>Research Areas:</h4>
+          <ul>
+            <li>IoT Security Architecture</li>
+            <li>Smart Automation Systems</li>
+            <li>AI/ML Integration Patterns</li>
+            <li>User Experience Design</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="academic-card">
+        <div class="academic-header">
+          <h3>Cybersecurity Architecture</h3>
+          <span class="assignment-type">Applied Research</span>
+        </div>
+        <p>Advanced cybersecurity research focusing on zero-trust architecture, threat modeling, incident response, and compliance frameworks.</p>
+        <div class="methodology">
+          <h4>Core Topics:</h4>
+          <ul>
+            <li>Zero-Trust Security Architecture</li>
+            <li>Advanced Threat Modeling</li>
+            <li>Incident Response Planning</li>
+            <li>Compliance & Risk Management</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="academic-note">
+      <p><strong>Academic Context:</strong> These works combine theoretical frameworks with practical implementation experience from government and enterprise environments.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .academic-section { padding: 4rem 0; background: var(--bg-primary); }
+  .academic-section h2 { text-align: center; margin-bottom: 1rem; font-size: 2.5rem; color: var(--text-primary); }
+  .section-subtitle { text-align: center; margin-bottom: 2rem; color: var(--text-secondary); }
+  .academic-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; margin: 2rem 0; }
+  .academic-card { background: var(--bg-secondary); border-radius: 12px; padding: 2rem; border: 1px solid var(--border-color); }
+  .academic-header { display: flex; justify-content: space-between; gap: 1rem; align-items: baseline; flex-wrap: wrap; }
+  .academic-header h3 { color: var(--accent-color); margin: 0; font-size: 1.25rem; }
+  .assignment-type { background: var(--accent-color); color: #fff; padding: 0.25rem 0.6rem; border-radius: 12px; font-size: 0.8rem; }
+  .methodology h4 { margin: 1rem 0 0.5rem; }
+  .methodology ul { margin: 0; padding-left: 1.1rem; }
+  .academic-note { background: #f6f8ff; border-left: 4px solid var(--accent-color); padding: 1rem; border-radius: 8px; }
+</style>
