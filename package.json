@@ -24,10 +24,10 @@
   "devDependencies": {
     "wrangler": "4.21.x"
   },
-"scripts": {
-  "build": "astro build",
-  "dev": "astro dev",
-  "preview": "astro preview",
-  "start": "astro dev"
+  "scripts": {
+    "build": "astro build",
+    "dev": "astro dev",
+    "preview": "astro preview",
+    "start": "astro dev"
+  }
 }
-
