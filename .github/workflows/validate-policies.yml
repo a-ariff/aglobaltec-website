@@ -1,0 +1,102 @@
+name: Validate Policy Files
+
+on:
+  pull_request:
+    paths:
+      - 'docs/examples/popup-policy/**/*.json'
+      - 'docs/examples/popup-policy/**/*.plist'
+      - 'docs/examples/popup-policy/**/*.xml'
+  push:
+    branches: [ main, guides/* ]
+    paths:
+      - 'docs/examples/popup-policy/**/*.json'
+      - 'docs/examples/popup-policy/**/*.plist'
+      - 'docs/examples/popup-policy/**/*.xml'
+
+jobs:
+  validate-policies:
+    runs-on: ubuntu-latest
+    name: Validate Policy Files
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+        
+    - name: Install JSON validation tools
+      run: |
+        npm install -g jsonlint ajv-cli
+        
+    - name: Validate JSON files
+      run: |
+        echo "Validating JSON policy files..."
+        find docs/examples/popup-policy -name "*.json" -type f | while read file; do
+          echo "Validating: $file"
+          if ! jsonlint -q "$file"; then
+            echo "❌ JSON validation failed for: $file"
+            exit 1
+          else
+            echo "✅ JSON validation passed for: $file"
+          fi
+        done
+        
+    - name: Validate PLIST files
+      run: |
+        echo "Validating PLIST policy files..."
+        if find docs/examples/popup-policy -name "*.plist" -type f | grep -q .; then
+          find docs/examples/popup-policy -name "*.plist" -type f | while read file; do
+            echo "Validating: $file"
+            if ! plutil -lint "$file" 2>/dev/null; then
+              echo "❌ PLIST validation failed for: $file"
+              exit 1
+            else
+              echo "✅ PLIST validation passed for: $file"
+            fi
+          done
+        else
+          echo "No PLIST files found to validate"
+        fi
+        
+    - name: Validate XML files
+      run: |
+        echo "Validating XML policy files..."
+        if find docs/examples/popup-policy -name "*.xml" -type f | grep -q .; then
+          find docs/examples/popup-policy -name "*.xml" -type f | while read file; do
+            echo "Validating: $file"
+            if ! xmllint --noout "$file" 2>/dev/null; then
+              echo "❌ XML validation failed for: $file"
+              exit 1
+            else
+              echo "✅ XML validation passed for: $file"
+            fi
+          done
+        else
+          echo "No XML files found to validate"
+        fi
+        
+    - name: Policy file content validation
+      run: |
+        echo "Performing content validation on policy files..."
+        find docs/examples/popup-policy -name "*.json" -type f | while read file; do
+          echo "Content validation: $file"
+          # Check for required popup policy keys
+          if grep -q '"PopupsAllowedForUrls"\|"PopupsBlockedForUrls"\|"DefaultPopupsSetting"' "$file"; then
+            echo "✅ Content validation passed for: $file"
+          else
+            echo "❌ Content validation failed - missing required popup policy keys in: $file"
+            exit 1
+          fi
+        done
+        
+    - name: Summary
+      run: |
+        echo "🎉 All policy file validations completed successfully!"
+        echo "📊 Validation Summary:"
+        echo "   - JSON syntax validation: ✅"
+        echo "   - PLIST format validation: ✅"
+        echo "   - XML format validation: ✅"
+        echo "   - Policy content validation: ✅"
