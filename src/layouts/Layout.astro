@@ -1,0 +1,143 @@
+---
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  url?: string;
+}
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+
+const {
+  title = 'A Global Tec - Microsoft 365 & Azure Solutions',
+  description = 'Expert Microsoft 365 and Azure cloud solutions, security, and automation services.',
+  image = '/og-image.jpg',
+  url = canonicalURL
+} = Astro.props;
+
+const imageUrl = new URL(image, Astro.site);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href={canonicalURL} />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
+    
+    <title>{title}</title>
+  </head>
+  <body>
+    <!-- Top Navigation Bar -->
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="/" class="nav-logo">A Global Tec</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/#projects">Projects</a></li>
+          <li><a href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://linkedin.com/in/ariff" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+        </ul>
+      </div>
+    </nav>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <style>
+      .top-nav {
+        background: #fff;
+        border-bottom: 1px solid #e1e5e9;
+        padding: 1rem 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      }
+      
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      
+      .nav-logo {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #2c3e50;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-logo:hover {
+        color: #3498db;
+      }
+      
+      .nav-links {
+        display: flex;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        gap: 2rem;
+      }
+      
+      .nav-links a {
+        color: #555;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+      }
+      
+      .nav-links a:hover {
+        color: #3498db;
+        background: #f8f9fa;
+      }
+      
+      @media (max-width: 768px) {
+        .nav-container {
+          flex-direction: column;
+          gap: 1rem;
+          padding: 0 1rem;
+        }
+        
+        .nav-links {
+          gap: 1rem;
+        }
+        
+        .nav-links a {
+          padding: 0.25rem 0.5rem;
+          font-size: 0.9rem;
+        }
+      }
+      
+      main {
+        min-height: calc(100vh - 80px);
+      }
+    </style>
+  </body>
+</html>
