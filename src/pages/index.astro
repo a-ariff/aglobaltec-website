@@ -2,191 +2,131 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout
-  title="Ariff Mohamed - Azure Cloud Solutions Engineer | MIT Cybersecurity Student"
-  description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management."
->
-  <!-- Hero Section -->
-  <section class="py-16 text-center" style="background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)); position: relative; overflow: hidden;">
-    <div class="container mx-auto px-4">
-      <h1 class="mb-4" style="font-size: 3.5rem; font-weight: 700; color: white; line-height: 1.2;">Ariff Mohamed</h1>
-      <h2 class="mb-8" style="font-size: 1.5rem; font-weight: 500; color: rgba(255, 255, 255, 0.9);">Azure Cloud Solutions Engineer | Security Specialist</h2>
-      <p class="mb-8" style="font-size: 1.25rem; color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto 2rem; line-height: 1.6;">Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.</p>
-      <div class="flex justify-center gap-4">
-        <a class="btn btn-primary" href="#projects">View Azure Projects</a>
-        <a class="btn btn-secondary" href="#about">Learn More</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Azure Projects -->
-  <section class="py-16" id="projects">
-    <div class="container mx-auto px-4">
-      <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary);">Featured Azure Projects</h2>
-      <p class="text-center mb-12" style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">Explore my specialized Azure implementations focused on automation, security, and enterprise management</p>
+<Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer" description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance.">
+  <div style="min-height: 100vh; display: grid; grid-template-rows: auto 1fr auto; font-family: system-ui, -apple-system, sans-serif; color: #333; background: #f8f9fa;">
+    
+    <!-- Header -->
+    <header style="background: linear-gradient(135deg, #0066cc, #004499); color: white; padding: 2rem 1rem; text-align: center;">
+      <h1 style="font-size: 3rem; font-weight: 700; margin: 0 0 0.5rem 0; line-height: 1.2;">Ariff Mohamed</h1>
+      <h2 style="font-size: 1.5rem; font-weight: 400; margin: 0; opacity: 0.9;">Azure Cloud Solutions Engineer | Security Specialist</h2>
+    </header>
+    
+    <!-- Main Content -->
+    <main style="flex: 1; padding: 3rem 1rem;">
       
-      <div class="grid grid-cols-2 gap-6">
-        <div class="card p-6">
-          <div class="card-header mb-4">
-            <h3 class="card-title text-xl font-semibold mb-2">Azure Automation Hub</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description mb-4 text-gray-600 leading-relaxed">Comprehensive PowerShell runbook automation platform for enterprise user management, resource provisioning, and operational workflows. Features advanced scheduling, error handling, and audit trails.</p>
-            <a class="btn btn-secondary mt-auto" href="https://automation.aglobaltec.com" target="_blank">Explore Automation →</a>
-          </div>
+      <!-- Hero Section -->
+      <section style="max-width: 800px; margin: 0 auto 4rem auto; text-align: center;">
+        <p style="font-size: 1.25rem; line-height: 1.6; margin-bottom: 2rem; color: #555;">Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.</p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="#projects" style="background: #0066cc; color: white; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; transition: background 0.2s;">View Projects</a>
+          <a href="#about" style="background: white; color: #0066cc; padding: 0.75rem 1.5rem; border-radius: 8px; text-decoration: none; font-weight: 500; border: 2px solid #0066cc; transition: all 0.2s;">Learn More</a>
         </div>
-        
-        <div class="card p-6">
-          <div class="card-header mb-4">
-            <h3 class="card-title text-xl font-semibold mb-2">Log Analytics Toolkit</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description mb-4 text-gray-600 leading-relaxed">Advanced KQL query library and monitoring dashboard suite for Azure security insights, performance analysis, and compliance reporting. Real-time alerting and custom workbooks included.</p>
-            <a class="btn btn-secondary mt-auto" href="https://log.aglobaltec.com" target="_blank">Explore Analytics →</a>
-          </div>
-        </div>
-        
-        <div class="card p-6">
-          <div class="card-header mb-4">
-            <h3 class="card-title text-xl font-semibold mb-2">Secure Storage Patterns</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description mb-4 text-gray-600 leading-relaxed">Enterprise-grade Azure storage security implementations featuring encryption at rest and in transit, compliance frameworks, access policies, and data governance best practices.</p>
-            <a class="btn btn-secondary mt-auto" href="https://storage.aglobaltec.com" target="_blank">Explore Storage →</a>
-          </div>
-        </div>
-        
-        <div class="card p-6">
-          <div class="card-header mb-4">
-            <h3 class="card-title text-xl font-semibold mb-2">Device Compliance Monitor</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description mb-4 text-gray-600 leading-relaxed">Microsoft Intune-powered device management and compliance monitoring solution. Automated policy enforcement, security baselines, and comprehensive reporting for enterprise endpoints.</p>
-            <a class="btn btn-secondary mt-auto" href="https://compliance.aglobaltec.com" target="_blank">Explore Compliance →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Side Projects -->
-  <section class="py-16" id="side-projects">
-    <div class="container mx-auto px-4">
-      <h2 class="text-center mb-4" style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary);">Side Projects</h2>
-      <p class="text-center mb-12" style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">Personal development tools and experimental applications</p>
+      </section>
       
-      <div class="flex justify-center">
-        <div class="card p-6" style="max-width: 400px;">
-          <div class="card-header mb-4">
-            <h3 class="card-title text-xl font-semibold mb-2">Todo Application</h3>
+      <!-- Projects Section -->
+      <section id="projects" style="max-width: 1200px; margin: 0 auto 4rem auto;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 1rem; color: #333;">Featured Azure Projects</h2>
+        <p style="text-align: center; font-size: 1.125rem; color: #666; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">Explore my specialized Azure implementations focused on automation, security, and enterprise management</p>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; margin-bottom: 3rem;">
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e0e0e0;">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem 0; color: #333;">Azure Automation Hub</h3>
+            <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Comprehensive PowerShell runbook automation platform for enterprise user management, resource provisioning, and operational workflows. Features advanced scheduling, error handling, and audit trails.</p>
+            <a href="https://automation.aglobaltec.com" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Explore Automation →</a>
           </div>
-          <div class="card-body">
-            <p class="card-description mb-4 text-gray-600 leading-relaxed">A modern, responsive task management application built with modern web technologies. Features task organization, priority management, and progress tracking.</p>
-            <a class="btn btn-primary" href="https://todo.aglobaltec.com" target="_blank">Try Todo App →</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section class="py-16" id="about">
-    <div class="container mx-auto px-4">
-      <h2 class="text-center mb-12" style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary);">About Me</h2>
-      
-      <div class="grid grid-cols-2 gap-12 max-w-5xl mx-auto items-start">
-        <div class="space-y-6">
-          <p class="text-lg text-gray-600 leading-relaxed">As an Azure Cloud Solutions Engineer specializing in security architecture, I bring deep technical expertise in enterprise cloud infrastructure, automation, and compliance. My experience spans large-scale Azure implementations, security frameworks, and innovative problem-solving for complex business challenges.</p>
           
-          <p class="text-lg text-gray-600 leading-relaxed">Currently advancing my expertise through MIT's Cybersecurity program, I'm passionate about developing secure, scalable Azure solutions that drive business value while maintaining the highest security and compliance standards.</p>
-        </div>
-        
-        <div>
-          <h3 class="mb-6" style="font-size: 1.5rem; font-weight: 600; color: var(--accent-primary);">Azure Specializations</h3>
-          <div class="grid gap-3">
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              Azure Security Architecture
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              PowerShell Automation & Runbooks
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              KQL & Log Analytics
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              Microsoft Intune Management
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              Storage Security & Encryption
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              Compliance & Governance
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              Identity & Access Management
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              DevSecOps Implementation
-            </div>
-            <div class="flex items-center gap-3 py-2 text-gray-600">
-              <span class="w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></span>
-              Threat Detection & Response
-            </div>
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e0e0e0;">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem 0; color: #333;">Log Analytics Toolkit</h3>
+            <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Advanced KQL query library and monitoring dashboard suite for Azure security insights, performance analysis, and compliance reporting. Real-time alerting and custom workbooks included.</p>
+            <a href="https://log.aglobaltec.com" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Explore Analytics →</a>
+          </div>
+          
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e0e0e0;">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem 0; color: #333;">Secure Storage Patterns</h3>
+            <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Enterprise-grade Azure storage security implementations featuring encryption at rest and in transit, compliance frameworks, access policies, and data governance best practices.</p>
+            <a href="https://storage.aglobaltec.com" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Explore Storage →</a>
+          </div>
+          
+          <div style="background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); border: 1px solid #e0e0e0;">
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin: 0 0 1rem 0; color: #333;">Device Compliance Monitor</h3>
+            <p style="color: #666; line-height: 1.6; margin-bottom: 1.5rem;">Microsoft Intune-powered device management and compliance monitoring solution. Automated policy enforcement, security baselines, and comprehensive reporting for enterprise endpoints.</p>
+            <a href="https://compliance.aglobaltec.com" target="_blank" style="color: #0066cc; text-decoration: none; font-weight: 500;">Explore Compliance →</a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section class="py-16" id="contact">
-    <div class="container mx-auto px-4 text-center">
-      <h2 class="mb-4" style="font-size: 2.5rem; font-weight: 700; color: var(--text-primary);">Get In Touch</h2>
-      <p class="mb-12" style="font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem;">Interested in collaborating on Azure cloud security solutions or discussing enterprise automation projects? Let's connect.</p>
+      </section>
       
-      <div class="grid grid-cols-3 gap-6 max-w-4xl mx-auto mb-8">
-        <a class="card p-6 text-center hover:shadow-lg transition-shadow" href="mailto:ariff@aglobaltec.com" style="text-decoration: none; color: inherit;">
-          <div class="card-header mb-4">
-            <div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-semibold text-lg">@</div>
-            <h3 class="card-title text-lg font-semibold">Email</h3>
+      <!-- About Section -->
+      <section id="about" style="max-width: 1000px; margin: 0 auto;">
+        <h2 style="font-size: 2.5rem; font-weight: 700; text-align: center; margin-bottom: 3rem; color: #333;">About Me</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 3rem; align-items: start;">
+          <div>
+            <p style="font-size: 1.125rem; color: #666; line-height: 1.6; margin-bottom: 1.5rem;">As an Azure Cloud Solutions Engineer specializing in security architecture, I bring deep technical expertise in enterprise cloud infrastructure, automation, and compliance. My experience spans large-scale Azure implementations, security frameworks, and innovative problem-solving for complex business challenges.</p>
+            
+            <p style="font-size: 1.125rem; color: #666; line-height: 1.6;">Currently advancing my expertise through MIT's Cybersecurity program, I'm passionate about developing secure, scalable Azure solutions that drive business value while maintaining the highest security and compliance standards.</p>
           </div>
-          <div class="card-body">
-            <p class="card-description text-gray-600">ariff@aglobaltec.com</p>
+          
+          <div>
+            <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1.5rem; color: #0066cc;">Azure Specializations</h3>
+            <div style="display: grid; gap: 0.75rem;">
+              <div style="display: flex; align-items: center; gap: 0.75rem; color: #666;">
+                <span style="width: 8px; height: 8px; background: #0066cc; border-radius: 50%; flex-shrink: 0;"></span>
+                Azure Security Architecture
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; color: #666;">
+                <span style="width: 8px; height: 8px; background: #0066cc; border-radius: 50%; flex-shrink: 0;"></span>
+                PowerShell Automation & Runbooks
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; color: #666;">
+                <span style="width: 8px; height: 8px; background: #0066cc; border-radius: 50%; flex-shrink: 0;"></span>
+                KQL & Log Analytics
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; color: #666;">
+                <span style="width: 8px; height: 8px; background: #0066cc; border-radius: 50%; flex-shrink: 0;"></span>
+                Microsoft Intune Management
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; color: #666;">
+                <span style="width: 8px; height: 8px; background: #0066cc; border-radius: 50%; flex-shrink: 0;"></span>
+                Storage Security & Encryption
+              </div>
+              <div style="display: flex; align-items: center; gap: 0.75rem; color: #666;">
+                <span style="width: 8px; height: 8px; background: #0066cc; border-radius: 50%; flex-shrink: 0;"></span>
+                Compliance & Governance
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
+      
+    </main>
+    
+    <!-- Footer -->
+    <footer style="background: #333; color: white; text-align: center; padding: 2rem 1rem;">
+      <h3 style="font-size: 1.5rem; font-weight: 600; margin-bottom: 1rem;">Get In Touch</h3>
+      <p style="margin-bottom: 2rem; opacity: 0.8;">Interested in Azure cloud security solutions or enterprise automation projects?</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; max-width: 600px; margin: 0 auto 2rem auto;">
+        <a href="mailto:ariff@aglobaltec.com" style="color: white; text-decoration: none; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; transition: background 0.2s;">
+          <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">✉️</div>
+          <div style="font-weight: 500;">Email</div>
+          <div style="opacity: 0.8; font-size: 0.875rem;">Direct Contact</div>
         </a>
         
-        <a class="card p-6 text-center hover:shadow-lg transition-shadow" href="https://linkedin.com/in/ariff" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" target="_blank">
-          <div class="card-header mb-4">
-            <div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-semibold text-sm">in</div>
-            <h3 class="card-title text-lg font-semibold">LinkedIn</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description text-gray-600">Professional Profile</p>
-          </div>
+        <a href="https://linkedin.com/in/ariff" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; transition: background 0.2s;">
+          <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💼</div>
+          <div style="font-weight: 500;">LinkedIn</div>
+          <div style="opacity: 0.8; font-size: 0.875rem;">Professional Profile</div>
         </a>
         
-        <a class="card p-6 text-center hover:shadow-lg transition-shadow" href="https://github.com/a-ariff" rel="noopener noreferrer" style="text-decoration: none; color: inherit;" target="_blank">
-          <div class="card-header mb-4">
-            <div class="w-12 h-12 bg-blue-500 rounded-full mx-auto mb-4 flex items-center justify-center text-white font-semibold text-sm">&lt;&gt;</div>
-            <h3 class="card-title text-lg font-semibold">GitHub</h3>
-          </div>
-          <div class="card-body">
-            <p class="card-description text-gray-600">Technical Portfolio</p>
-          </div>
+        <a href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none; padding: 1rem; background: rgba(255, 255, 255, 0.1); border-radius: 8px; transition: background 0.2s;">
+          <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💻</div>
+          <div style="font-weight: 500;">GitHub</div>
+          <div style="opacity: 0.8; font-size: 0.875rem;">Technical Portfolio</div>
         </a>
       </div>
       
-      <div>
-        <a class="btn btn-primary" href="mailto:ariff@aglobaltec.com">Start a Conversation</a>
-      </div>
-    </div>
-  </section>
+      <a href="mailto:ariff@aglobaltec.com" style="background: #0066cc; color: white; padding: 0.75rem 2rem; border-radius: 8px; text-decoration: none; font-weight: 500; display: inline-block;">Start a Conversation</a>
+    </footer>
+    
+  </div>
 </Layout>
