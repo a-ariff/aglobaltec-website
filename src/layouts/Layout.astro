@@ -9,8 +9,8 @@ export interface Props {
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const {
-  title = 'A Global Tec - Microsoft 365 & Azure Solutions',
-  description = 'Expert Microsoft 365 and Azure cloud solutions, security, and automation services.',
+  title = 'Ariff Mohamed - Azure Cloud Solutions Engineer | A Global Tec',
+  description = 'Ariff Mohamed - Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Microsoft 365 and Azure cloud solutions, security, and automation services.',
   image = '/og-image.jpg',
   url = canonicalURL
 } = Astro.props;
@@ -21,7 +21,7 @@ const imageUrl = new URL(image, Astro.site);
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+    <meta charset="utf-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -47,6 +47,7 @@ const imageUrl = new URL(image, Astro.site);
     <title>{title}</title>
   </head>
   <body>
+    
     <!-- Top Navigation Bar -->
     <nav class="top-nav">
       <div class="nav-container">
