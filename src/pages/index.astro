@@ -1,12 +1,11 @@
 ---
 import Layout from '../layouts/Layout.astro';
 ---
-<Layout title="Ariff Afandi - Azure Cloud Solutions Engineer | MIT Cybersecurity Student"
-  description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management.">
+<Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer | MIT Cybersecurity Student" description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management.">
   <!-- Hero Section -->
   <section class="hero">
     <div class="hero-content">
-      <h1>Ariff Afandi</h1>
+      <h1>Ariff Mohamed</h1>
       <h2>Azure Cloud Solutions Engineer | Security Specialist</h2>
       <p>Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.</p>
       <div class="hero-links">
@@ -45,6 +44,22 @@ import Layout from '../layouts/Layout.astro';
           <h3>Device Compliance Monitor</h3>
           <p>Microsoft Intune-powered device management and compliance monitoring solution. Automated policy enforcement, security baselines, and comprehensive reporting for enterprise endpoints.</p>
           <a class="project-link" href="https://compliance.aglobaltec.com" target="_blank">Explore Compliance →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Side Projects Section -->
+  <section class="side-projects" id="side-projects">
+    <div class="container">
+      <h2>Side Projects</h2>
+      <p>Personal development tools and experimental applications</p>
+      
+      <div class="projects-grid">
+        <div class="project-card secondary">
+          <h3>Todo Application</h3>
+          <p>A modern, responsive task management application built with modern web technologies. Features task organization, priority management, and progress tracking.</p>
+          <a class="project-link" href="https://todo.aglobaltec.com" target="_blank">Try Todo App →</a>
         </div>
       </div>
     </div>
@@ -175,19 +190,23 @@ import Layout from '../layouts/Layout.astro';
     padding: 0 20px;
   }
   
-  .projects {
+  .projects, .side-projects {
     padding: 80px 0;
     background: #f8f9fa;
   }
+
+  .side-projects {
+    background: #ffffff;
+  }
   
-  .projects h2 {
+  .projects h2, .side-projects h2 {
     text-align: center;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #333;
   }
   
-  .projects > .container > p {
+  .projects > .container > p, .side-projects > .container > p {
     text-align: center;
     font-size: 1.1rem;
     color: #666;
@@ -207,6 +226,11 @@ import Layout from '../layouts/Layout.astro';
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
+
+  .project-card.secondary {
+    background: #f8f9fa;
+    border: 2px solid #e9ecef;
+  }
   
   .project-card:hover {
     transform: translateY(-5px);
@@ -217,6 +241,10 @@ import Layout from '../layouts/Layout.astro';
     color: #0078d4;
     margin-bottom: 1rem;
     font-size: 1.3rem;
+  }
+
+  .project-card.secondary h3 {
+    color: #6c757d;
   }
   
   .project-card p {
@@ -231,9 +259,17 @@ import Layout from '../layouts/Layout.astro';
     font-weight: 600;
     transition: color 0.3s ease;
   }
+
+  .project-card.secondary .project-link {
+    color: #6c757d;
+  }
   
   .project-link:hover {
     color: #005a9e;
+  }
+
+  .project-card.secondary .project-link:hover {
+    color: #495057;
   }
   
   .about {
