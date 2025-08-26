@@ -13,7 +13,7 @@ const {
   url = canonicalURL
 } = Astro.props;
 const imageUrl = new URL(image, Astro.site);
----<!DOCTYPE html>
+---
 <html lang="en">
   <head>
     <meta charset="utf-8"/>
@@ -25,7 +25,7 @@ const imageUrl = new URL(image, Astro.site);
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com" rel="preconnect"/>
     <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
     
     <!-- Canonical URL -->
     <link href="{canonicalURL}" rel="canonical"/>
@@ -273,8 +273,8 @@ const imageUrl = new URL(image, Astro.site);
     
     <title>{title}</title>
   </head>
-  
   <body>
+  
     <!-- Sticky Top Navigation -->
     <nav class="sticky-nav nav-transparent" id="main-nav">
       <div class="container">
