@@ -7,25 +7,32 @@ export interface Props {
 }
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-
 const {
   title = 'Ariff Mohamed - Azure Cloud Solutions Engineer | A Global Tec',
   description = 'Ariff Mohamed - Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Microsoft 365 and Azure cloud solutions, security, and automation services.',
   image = '/og-image.jpg',
   url = canonicalURL
 } = Astro.props;
-
 const imageUrl = new URL(image, Astro.site);
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <link rel="stylesheet" href="/src/styles/theme.css" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -46,18 +53,26 @@ const imageUrl = new URL(image, Astro.site);
     
     <title>{title}</title>
   </head>
+  
   <body>
-    
-    <!-- Top Navigation Bar -->
-    <nav class="top-nav">
-      <div class="nav-container">
-        <a href="/" class="nav-logo">A Global Tec</a>
-        <ul class="nav-links">
-          <li><a href="/">Home</a></li>
-          <li><a href="/#projects">Projects</a></li>
-          <li><a href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-          <li><a href="https://linkedin.com/in/ariff" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-        </ul>
+    <!-- Sticky Top Navigation -->
+    <nav class="sticky-nav nav-transparent" id="main-nav">
+      <div class="container">
+        <div class="flex justify-between items-center" style="padding: var(--space-md) 0;">
+          <a href="/" class="nav-logo">
+            <span class="icon-placeholder" style="margin-right: var(--space-sm);"></span>
+            A Global Tec
+          </a>
+          
+          <ul class="nav-links flex items-center gap-6">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/#projects" class="nav-link">Projects</a></li>
+            <li><a href="/#about" class="nav-link">About</a></li>
+            <li><a href="/#contact" class="nav-link">Contact</a></li>
+            <li><a href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a></li>
+            <li><a href="https://linkedin.com/in/ariff" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a></li>
+          </ul>
+        </div>
       </div>
     </nav>
     
@@ -66,79 +81,93 @@ const imageUrl = new URL(image, Astro.site);
     </main>
     
     <style>
-      .top-nav {
-        background: #fff;
-        border-bottom: 1px solid #e1e5e9;
-        padding: 1rem 0;
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      }
-      
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      
       .nav-logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #2c3e50;
+        display: flex;
+        align-items: center;
+        font-family: var(--font-family-heading);
+        font-size: var(--font-size-xl);
+        font-weight: var(--font-weight-bold);
+        color: var(--text-primary);
         text-decoration: none;
-        transition: color 0.3s ease;
+        transition: all var(--transition-base);
       }
       
       .nav-logo:hover {
-        color: #3498db;
+        color: var(--accent-400);
       }
       
       .nav-links {
-        display: flex;
         list-style: none;
         margin: 0;
         padding: 0;
-        gap: 2rem;
       }
       
-      .nav-links a {
-        color: #555;
+      .nav-link {
+        color: var(--text-secondary);
         text-decoration: none;
-        font-weight: 500;
-        transition: color 0.3s ease;
-        padding: 0.5rem 1rem;
-        border-radius: 4px;
+        font-family: var(--font-family-base);
+        font-weight: var(--font-weight-medium);
+        font-size: var(--font-size-sm);
+        padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-md);
+        transition: all var(--transition-base);
+        position: relative;
       }
       
-      .nav-links a:hover {
-        color: #3498db;
-        background: #f8f9fa;
+      .nav-link:hover {
+        color: var(--text-primary);
+        background: rgba(255, 255, 255, 0.05);
+        transform: translateY(-1px);
       }
       
+      .nav-link:focus-visible {
+        outline: 2px solid var(--accent-500);
+        outline-offset: 2px;
+      }
+      
+      /* Mobile navigation */
       @media (max-width: 768px) {
-        .nav-container {
-          flex-direction: column;
-          gap: 1rem;
-          padding: 0 1rem;
-        }
-        
         .nav-links {
-          gap: 1rem;
+          display: none; /* Will be replaced with mobile menu in future */
         }
         
-        .nav-links a {
-          padding: 0.25rem 0.5rem;
-          font-size: 0.9rem;
+        .nav-logo {
+          font-size: var(--font-size-lg);
         }
       }
       
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      /* Body styles */
+      body {
+        font-family: var(--font-family-base);
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: var(--line-height-normal);
+        margin: 0;
+      }
+      
+      /* Main content */
       main {
         min-height: calc(100vh - 80px);
       }
     </style>
+    
+    <script>
+      // Sticky navigation scroll effect
+      window.addEventListener('scroll', () => {
+        const nav = document.getElementById('main-nav');
+        if (window.scrollY > 50) {
+          nav?.classList.remove('nav-transparent');
+          nav?.classList.add('nav-solid');
+        } else {
+          nav?.classList.remove('nav-solid');
+          nav?.classList.add('nav-transparent');
+        }
+      });
+    </script>
   </body>
 </html>
