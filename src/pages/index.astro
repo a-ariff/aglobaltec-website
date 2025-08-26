@@ -2,407 +2,200 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout
+<Layout 
   title="Ariff Mohamed - Azure Cloud Solutions Engineer | MIT Cybersecurity Student"
   description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management."
 >
+  
   <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Ariff Mohamed</h1>
-      <h2>Azure Cloud Solutions Engineer | Security Specialist</h2>
-      <p>Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.</p>
-      <div class="hero-links">
-        <a href="#projects" class="btn-primary">View Azure Projects</a>
-        <a href="#about" class="btn-secondary">Learn More</a>
+  <section class="section gradient-primary text-center">
+    <div class="container">
+      <div class="hero-content">
+        <h1 style="font-family: var(--font-family-heading); font-size: var(--font-size-5xl); font-weight: var(--font-weight-bold); color: white; margin-bottom: var(--space-md); line-height: var(--line-height-tight);">Ariff Mohamed</h1>
+        <h2 style="font-family: var(--font-family-heading); font-size: var(--font-size-xl); font-weight: var(--font-weight-medium); color: rgba(255, 255, 255, 0.9); margin-bottom: var(--space-lg);">Azure Cloud Solutions Engineer | Security Specialist</h2>
+        <p style="font-size: var(--font-size-lg); color: rgba(255, 255, 255, 0.8); max-width: 600px; margin: 0 auto var(--space-2xl); line-height: var(--line-height-relaxed);">Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.</p>
+        <div class="flex gap-4 justify-center" style="margin-top: var(--space-2xl);">
+          <a href="#projects" class="btn btn-primary">View Azure Projects</a>
+          <a href="#about" class="btn btn-secondary">Learn More</a>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Featured Azure Projects -->
-  <section id="projects" class="projects">
+  <section class="section" id="projects">
     <div class="container">
-      <h2>Featured Azure Projects</h2>
-      <p>Explore my specialized Azure implementations focused on automation, security, and enterprise management</p>
+      <h2 class="text-center mb-4" style="font-family: var(--font-family-heading); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--text-primary);">Featured Azure Projects</h2>
+      <p class="text-center mb-8" style="font-size: var(--font-size-lg); color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-2xl);">Explore my specialized Azure implementations focused on automation, security, and enterprise management</p>
       
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>Azure Automation Hub</h3>
-          <p>Comprehensive PowerShell runbook automation platform for enterprise user management, resource provisioning, and operational workflows. Features advanced scheduling, error handling, and audit trails.</p>
-          <a href="https://automation.aglobaltec.com" target="_blank" class="project-link">Explore Automation →</a>
+      <div class="grid grid-cols-2 gap-6">
+        <div class="card">
+          <div class="card-header flex items-center gap-4">
+            <div class="icon-placeholder icon-placeholder-lg"></div>
+            <h3 class="card-title">Azure Automation Hub</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description mb-4">Comprehensive PowerShell runbook automation platform for enterprise user management, resource provisioning, and operational workflows. Features advanced scheduling, error handling, and audit trails.</p>
+            <a href="https://automation.aglobaltec.com" target="_blank" class="btn btn-ghost">Explore Automation →</a>
+          </div>
         </div>
         
-        <div class="project-card">
-          <h3>Log Analytics Toolkit</h3>
-          <p>Advanced KQL query library and monitoring dashboard suite for Azure security insights, performance analysis, and compliance reporting. Real-time alerting and custom workbooks included.</p>
-          <a href="https://log.aglobaltec.com" target="_blank" class="project-link">Explore Analytics →</a>
+        <div class="card">
+          <div class="card-header flex items-center gap-4">
+            <div class="icon-placeholder icon-placeholder-lg"></div>
+            <h3 class="card-title">Log Analytics Toolkit</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description mb-4">Advanced KQL query library and monitoring dashboard suite for Azure security insights, performance analysis, and compliance reporting. Real-time alerting and custom workbooks included.</p>
+            <a href="https://log.aglobaltec.com" target="_blank" class="btn btn-ghost">Explore Analytics →</a>
+          </div>
         </div>
         
-        <div class="project-card">
-          <h3>Secure Storage Patterns</h3>
-          <p>Enterprise-grade Azure storage security implementations featuring encryption at rest and in transit, compliance frameworks, access policies, and data governance best practices.</p>
-          <a href="https://storage.aglobaltec.com" target="_blank" class="project-link">Explore Storage →</a>
+        <div class="card">
+          <div class="card-header flex items-center gap-4">
+            <div class="icon-placeholder icon-placeholder-lg"></div>
+            <h3 class="card-title">Secure Storage Patterns</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description mb-4">Enterprise-grade Azure storage security implementations featuring encryption at rest and in transit, compliance frameworks, access policies, and data governance best practices.</p>
+            <a href="https://storage.aglobaltec.com" target="_blank" class="btn btn-ghost">Explore Storage →</a>
+          </div>
         </div>
         
-        <div class="project-card">
-          <h3>Device Compliance Monitor</h3>
-          <p>Microsoft Intune-powered device management and compliance monitoring solution. Automated policy enforcement, security baselines, and comprehensive reporting for enterprise endpoints.</p>
-          <a href="https://compliance.aglobaltec.com" target="_blank" class="project-link">Explore Compliance →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Side Projects -->
-  <section id="side-projects" class="side-projects">
-    <div class="container">
-      <h2>Side Projects</h2>
-      <p>Personal development tools and experimental applications</p>
-      
-      <div class="projects-grid">
-        <div class="project-card secondary">
-          <h3>Todo Application</h3>
-          <p>A modern, responsive task management application built with modern web technologies. Features task organization, priority management, and progress tracking.</p>
-          <a href="https://todo.aglobaltec.com" target="_blank" class="project-link">Try Todo App →</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>As an Azure Cloud Solutions Engineer specializing in security architecture, I bring deep technical expertise in enterprise cloud infrastructure, automation, and compliance. My experience spans large-scale Azure implementations, security frameworks, and innovative problem-solving for complex business challenges.</p>
-          
-          <p>Currently advancing my expertise through MIT's Cybersecurity program, I'm passionate about developing secure, scalable Azure solutions that drive business value while maintaining the highest security and compliance standards.</p>
-          
-          <div class="expertise">
-            <h3>Azure Specializations</h3>
-            <ul>
-              <li>Azure Security Architecture</li>
-              <li>PowerShell Automation & Runbooks</li>
-              <li>KQL & Log Analytics</li>
-              <li>Microsoft Intune Management</li>
-              <li>Storage Security & Encryption</li>
-              <li>Compliance & Governance</li>
-              <li>Identity & Access Management</li>
-              <li>DevSecOps Implementation</li>
-              <li>Threat Detection & Response</li>
-            </ul>
+        <div class="card">
+          <div class="card-header flex items-center gap-4">
+            <div class="icon-placeholder icon-placeholder-lg"></div>
+            <h3 class="card-title">Device Compliance Monitor</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description mb-4">Microsoft Intune-powered device management and compliance monitoring solution. Automated policy enforcement, security baselines, and comprehensive reporting for enterprise endpoints.</p>
+            <a href="https://compliance.aglobaltec.com" target="_blank" class="btn btn-ghost">Explore Compliance →</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" class="contact">
+  <!-- Side Projects -->
+  <section class="section" id="side-projects">
     <div class="container">
-      <h2>Get In Touch</h2>
-      <p>Interested in collaborating on Azure cloud security solutions or discussing enterprise automation projects? Let's connect.</p>
+      <h2 class="text-center mb-4" style="font-family: var(--font-family-heading); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--text-primary);">Side Projects</h2>
+      <p class="text-center mb-8" style="font-size: var(--font-size-lg); color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-2xl);">Personal development tools and experimental applications</p>
       
-      <div class="contact-links">
-        <a href="mailto:ariff@aglobaltec.com" class="contact-link">
-          <span>Email</span>
-          <span>ariff@aglobaltec.com</span>
-        </a>
-        
-        <a href="https://linkedin.com/in/ariff-afandi" target="_blank" class="contact-link">
-          <span>LinkedIn</span>
-          <span>Professional Profile</span>
-        </a>
-        
-        <a href="https://github.com/a-ariff" target="_blank" class="contact-link">
-          <span>GitHub</span>
-          <span>Technical Portfolio</span>
-        </a>
+      <div class="grid grid-cols-1" style="max-width: 500px; margin: 0 auto;">
+        <div class="card card-accent">
+          <div class="card-header flex items-center gap-4">
+            <div class="icon-placeholder icon-placeholder-lg"></div>
+            <h3 class="card-title">Todo Application</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description mb-4">A modern, responsive task management application built with modern web technologies. Features task organization, priority management, and progress tracking.</p>
+            <a href="https://todo.aglobaltec.com" target="_blank" class="btn btn-secondary">Try Todo App →</a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-</Layout>
 
-<style>
-  .hero {
-    background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
-    color: white;
-    padding: 100px 0;
-    text-align: center;
-  }
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="text-center mb-8" style="font-family: var(--font-family-heading); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--text-primary);">About Me</h2>
+      
+      <div class="grid grid-cols-2 gap-8" style="max-width: 1000px; margin: 0 auto;">
+        <div class="about-text">
+          <p style="font-size: var(--font-size-lg); color: var(--text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-lg);">As an Azure Cloud Solutions Engineer specializing in security architecture, I bring deep technical expertise in enterprise cloud infrastructure, automation, and compliance. My experience spans large-scale Azure implementations, security frameworks, and innovative problem-solving for complex business challenges.</p>
+          
+          <p style="font-size: var(--font-size-lg); color: var(--text-secondary); line-height: var(--line-height-relaxed); margin-bottom: var(--space-xl);">Currently advancing my expertise through MIT's Cybersecurity program, I'm passionate about developing secure, scalable Azure solutions that drive business value while maintaining the highest security and compliance standards.</p>
+        </div>
+        
+        <div class="expertise">
+          <h3 style="font-family: var(--font-family-heading); font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold); color: var(--accent-400); margin-bottom: var(--space-lg);">Azure Specializations</h3>
+          <ul class="grid grid-cols-1 gap-2" style="list-style: none; margin: 0; padding: 0;">
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              Azure Security Architecture
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              PowerShell Automation & Runbooks
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              KQL & Log Analytics
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              Microsoft Intune Management
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              Storage Security & Encryption
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              Compliance & Governance
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              Identity & Access Management
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              DevSecOps Implementation
+            </li>
+            <li class="flex items-center gap-2" style="color: var(--text-secondary); padding: var(--space-sm) 0;">
+              <span class="icon-placeholder" style="width: 16px; height: 16px; flex-shrink: 0;"></span>
+              Threat Detection & Response
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="section" id="contact">
+    <div class="container text-center">
+      <h2 class="mb-4" style="font-family: var(--font-family-heading); font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold); color: var(--text-primary);">Get In Touch</h2>
+      <p class="mb-8" style="font-size: var(--font-size-lg); color: var(--text-secondary); max-width: 600px; margin: 0 auto var(--space-2xl);">Interested in collaborating on Azure cloud security solutions or discussing enterprise automation projects? Let's connect.</p>
+      
+      <div class="grid grid-cols-3 gap-6" style="max-width: 800px; margin: 0 auto;">
+        <a href="mailto:ariff@aglobaltec.com" class="card text-center" style="text-decoration: none; color: inherit; display: block;">
+          <div class="card-header">
+            <div class="icon-placeholder icon-placeholder-lg" style="margin: 0 auto var(--space-md);"></div>
+            <h3 class="card-title">Email</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description">ariff@aglobaltec.com</p>
+          </div>
+        </a>
+        
+        <a href="https://linkedin.com/in/ariff" target="_blank" rel="noopener noreferrer" class="card text-center" style="text-decoration: none; color: inherit; display: block;">
+          <div class="card-header">
+            <div class="icon-placeholder icon-placeholder-lg" style="margin: 0 auto var(--space-md);"></div>
+            <h3 class="card-title">LinkedIn</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description">Professional Profile</p>
+          </div>
+        </a>
+        
+        <a href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer" class="card text-center" style="text-decoration: none; color: inherit; display: block;">
+          <div class="card-header">
+            <div class="icon-placeholder icon-placeholder-lg" style="margin: 0 auto var(--space-md);"></div>
+            <h3 class="card-title">GitHub</h3>
+          </div>
+          <div class="card-content">
+            <p class="card-description">Technical Portfolio</p>
+          </div>
+        </a>
+      </div>
+      
+      <div style="margin-top: var(--space-2xl);">
+        <a href="mailto:ariff@aglobaltec.com" class="btn btn-primary">Start a Conversation</a>
+      </div>
+    </div>
+  </section>
   
-  .hero-content h1 {
-    font-size: 3.5rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
-  }
-  
-  .hero-content h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    font-weight: 400;
-    opacity: 0.9;
-  }
-  
-  .hero-content p {
-    font-size: 1.1rem;
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    opacity: 0.9;
-  }
-  
-  .hero-links {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  
-  .btn-primary, .btn-secondary {
-    padding: 12px 24px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-  }
-  
-  .btn-primary {
-    background: white;
-    color: #0078d4;
-  }
-  
-  .btn-secondary {
-    background: transparent;
-    color: white;
-    border: 2px solid white;
-  }
-  
-  .btn-primary:hover {
-    background: #f8f9fa;
-    transform: translateY(-2px);
-  }
-  
-  .btn-secondary:hover {
-    background: white;
-    color: #0078d4;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
-  
-  .projects, .side-projects {
-    padding: 80px 0;
-    background: #f8f9fa;
-  }
-  
-  .side-projects {
-    background: #ffffff;
-  }
-  
-  .projects h2, .side-projects h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .projects > .container > p, .side-projects > .container > p {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 3rem;
-  }
-  
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-  
-  .project-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .project-card.secondary {
-    background: #f8f9fa;
-    border: 2px solid #e9ecef;
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-  }
-  
-  .project-card h3 {
-    color: #0078d4;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-  }
-  
-  .project-card.secondary h3 {
-    color: #6c757d;
-  }
-  
-  .project-card p {
-    color: #666;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
-  }
-  
-  .project-link {
-    color: #0078d4;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  
-  .project-card.secondary .project-link {
-    color: #6c757d;
-  }
-  
-  .project-link:hover {
-    color: #005a9e;
-  }
-  
-  .project-card.secondary .project-link:hover {
-    color: #495057;
-  }
-  
-  .about {
-    padding: 80px 0;
-    background: white;
-  }
-  
-  .about h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: #333;
-  }
-  
-  .about-content {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .about-text p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: #555;
-    margin-bottom: 2rem;
-  }
-  
-  .expertise {
-    margin-top: 3rem;
-  }
-  
-  .expertise h3 {
-    color: #0078d4;
-    margin-bottom: 1rem;
-    font-size: 1.3rem;
-  }
-  
-  .expertise ul {
-    list-style: none;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 0.5rem;
-  }
-  
-  .expertise li {
-    padding: 0.5rem 0;
-    color: #555;
-    position: relative;
-    padding-left: 1.5rem;
-  }
-  
-  .expertise li:before {
-    content: "✓";
-    position: absolute;
-    left: 0;
-    color: #0078d4;
-    font-weight: bold;
-  }
-  
-  .contact {
-    padding: 80px 0;
-    background: #f8f9fa;
-  }
-  
-  .contact h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-    color: #333;
-  }
-  
-  .contact > .container > p {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    margin-bottom: 3rem;
-  }
-  
-  .contact-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  .contact-link {
-    background: white;
-    padding: 2rem;
-    border-radius: 10px;
-    text-decoration: none;
-    color: inherit;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    display: block;
-  }
-  
-  .contact-link:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  }
-  
-  .contact-link span:first-child {
-    display: block;
-    font-weight: 600;
-    color: #0078d4;
-    margin-bottom: 0.5rem;
-  }
-  
-  .contact-link span:last-child {
-    color: #666;
-  }
-  
-  @media (max-width: 768px) {
-    .hero-content h1 {
-      font-size: 2.5rem;
-    }
-    
-    .hero-links {
-      flex-direction: column;
-      align-items: center;
-    }
-    
-    .projects-grid {
-      grid-template-columns: 1fr;
-    }
-    
-    .expertise ul {
-      grid-template-columns: 1fr;
-    }
-  }
-</style>
+</Layout>
