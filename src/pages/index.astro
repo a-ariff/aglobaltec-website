@@ -1,18 +1,368 @@
 ---
-import Layout from '../components/Layout.astro';
-import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import Experience from '../components/Experience.astro';
-import Projects from '../components/Projects.astro';
-import AcademicWork from '../components/AcademicWork.astro';
-import Contact from '../components/Contact.astro';
+import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Ariff - Cloud Solutions Engineer | Azure Security | MIT Cybersecurity Student">
-  <Hero />
-  <About />
-  <Experience />
-  <Projects />
-  <AcademicWork />
-  <Contact />
+<Layout 
+  title="Ariff Afandi - Cloud Solutions Engineer | Azure Security | MIT Student"
+  description="Professional portfolio showcasing Azure cloud security expertise, technical projects, and cybersecurity solutions. MIT Cybersecurity Graduate Student."
+>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Ariff Afandi</h1>
+      <h2>Cloud Solutions Engineer | Azure Security Specialist</h2>
+      <p>Transforming cloud infrastructure with security-first architecture and innovative Azure solutions. Currently pursuing Cybersecurity at MIT.</p>
+      <div class="hero-links">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#about" class="btn-secondary">Learn More</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Grid -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Featured Azure Projects</h2>
+      <p>Explore my technical expertise through these specialized Azure implementations</p>
+      
+      <div class="projects-grid">
+        <div class="project-card">
+          <h3>Azure Virtual Desktop</h3>
+          <p>Enterprise-grade virtual desktop infrastructure with enhanced security controls and optimized performance.</p>
+          <a href="https://avd.aglobaltec.com" class="project-link" target="_blank">Explore AVD →</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Azure AI Services</h3>
+          <p>Intelligent cloud solutions leveraging Microsoft AI and machine learning capabilities for business transformation.</p>
+          <a href="https://ai.aglobaltec.com" class="project-link" target="_blank">Explore AI →</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Azure Backup Solutions</h3>
+          <p>Comprehensive backup and disaster recovery strategies ensuring business continuity and data protection.</p>
+          <a href="https://backup.aglobaltec.com" class="project-link" target="_blank">Explore Backup →</a>
+        </div>
+        
+        <div class="project-card">
+          <h3>Azure Governance</h3>
+          <p>Strategic cloud governance frameworks with policy implementation and compliance automation.</p>
+          <a href="https://governance.aglobaltec.com" class="project-link" target="_blank">Explore Governance →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <p>As a Cloud Solutions Engineer specializing in Azure security, I bring a unique blend of technical expertise and strategic thinking to cloud infrastructure challenges. My experience spans enterprise-level implementations, security architecture, and innovative problem-solving.</p>
+          
+          <p>Currently advancing my expertise through MIT's Cybersecurity program, I'm passionate about developing secure, scalable cloud solutions that drive business value while maintaining the highest security standards.</p>
+          
+          <div class="expertise">
+            <h3>Core Expertise</h3>
+            <ul>
+              <li>Azure Security Architecture</li>
+              <li>Cloud Infrastructure Design</li>
+              <li>DevSecOps Implementation</li>
+              <li>Compliance & Governance</li>
+              <li>Identity & Access Management</li>
+              <li>Threat Detection & Response</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p>Interested in collaborating or discussing cloud security solutions? Let's connect.</p>
+      
+      <div class="contact-links">
+        <a href="mailto:ariff@aglobaltec.com" class="contact-link">
+          <span>Email</span>
+          <span>ariff@aglobaltec.com</span>
+        </a>
+        
+        <a href="https://linkedin.com/in/ariff-afandi" class="contact-link" target="_blank">
+          <span>LinkedIn</span>
+          <span>Professional Profile</span>
+        </a>
+        
+        <a href="https://github.com/a-ariff" class="contact-link" target="_blank">
+          <span>GitHub</span>
+          <span>Technical Portfolio</span>
+        </a>
+      </div>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #0078d4 0%, #005a9e 100%);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+  }
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  
+  .hero-content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    opacity: 0.9;
+  }
+  
+  .hero-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .btn-primary, .btn-secondary {
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  .btn-primary {
+    background: white;
+    color: #0078d4;
+  }
+  
+  .btn-secondary {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .btn-primary:hover {
+    background: #f8f9fa;
+    transform: translateY(-2px);
+  }
+  
+  .btn-secondary:hover {
+    background: white;
+    color: #0078d4;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .projects {
+    padding: 80px 0;
+    background: #f8f9fa;
+  }
+  
+  .projects h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .projects > .container > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+  }
+  
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .project-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  }
+  
+  .project-card h3 {
+    color: #0078d4;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .project-card p {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+  
+  .project-link {
+    color: #0078d4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  .project-link:hover {
+    color: #005a9e;
+  }
+  
+  .about {
+    padding: 80px 0;
+    background: white;
+  }
+  
+  .about h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #333;
+  }
+  
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .about-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    margin-bottom: 2rem;
+  }
+  
+  .expertise {
+    margin-top: 3rem;
+  }
+  
+  .expertise h3 {
+    color: #0078d4;
+    margin-bottom: 1rem;
+    font-size: 1.3rem;
+  }
+  
+  .expertise ul {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.5rem;
+  }
+  
+  .expertise li {
+    padding: 0.5rem 0;
+    color: #555;
+    position: relative;
+    padding-left: 1.5rem;
+  }
+  
+  .expertise li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #0078d4;
+    font-weight: bold;
+  }
+  
+  .contact {
+    padding: 80px 0;
+    background: #f8f9fa;
+  }
+  
+  .contact h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  
+  .contact > .container > p {
+    text-align: center;
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 3rem;
+  }
+  
+  .contact-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .contact-link {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    text-decoration: none;
+    color: inherit;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+  }
+  
+  .contact-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .contact-link span:first-child {
+    display: block;
+    font-weight: 600;
+    color: #0078d4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact-link span:last-child {
+    color: #666;
+  }
+  
+  @media (max-width: 768px) {
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .hero-links {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .expertise ul {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
