@@ -6,6 +6,10 @@ export interface Props {
   url?: string;
 }
 
+// Import CSS files for Astro/Vite bundling
+import '../styles/global.css';
+import '../styles/theme.css';
+
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const {
   title = 'Ariff Mohamed - Azure Cloud Solutions Engineer | A Global Tec',
@@ -17,7 +21,7 @@ const imageUrl = new URL(image, Astro.site);
 ---
 
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="description" content={description} />
@@ -28,11 +32,7 @@ const imageUrl = new URL(image, Astro.site);
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="/src/styles/global.css" />
-    <link rel="stylesheet" href="/src/styles/theme.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
     
     <!-- Canonical URL -->
     <link rel="canonical" href={canonicalURL} />
@@ -53,24 +53,23 @@ const imageUrl = new URL(image, Astro.site);
     
     <title>{title}</title>
   </head>
-  
   <body>
     <!-- Sticky Top Navigation -->
     <nav class="sticky-nav nav-transparent" id="main-nav">
       <div class="container">
         <div class="flex justify-between items-center" style="padding: var(--space-md) 0;">
-          <a href="/" class="nav-logo">
+          <a class="nav-logo" href="/">
             <span class="icon-placeholder" style="margin-right: var(--space-sm);"></span>
             A Global Tec
           </a>
           
           <ul class="nav-links flex items-center gap-6">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/#projects" class="nav-link">Projects</a></li>
-            <li><a href="/#about" class="nav-link">About</a></li>
-            <li><a href="/#contact" class="nav-link">Contact</a></li>
-            <li><a href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer" class="nav-link">GitHub</a></li>
-            <li><a href="https://linkedin.com/in/ariff" target="_blank" rel="noopener noreferrer" class="nav-link">LinkedIn</a></li>
+            <li><a class="nav-link" href="/">Home</a></li>
+            <li><a class="nav-link" href="/#projects">Projects</a></li>
+            <li><a class="nav-link" href="/#about">About</a></li>
+            <li><a class="nav-link" href="/#contact">Contact</a></li>
+            <li><a class="nav-link" href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a class="nav-link" href="https://linkedin.com/in/ariff" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
       </div>
@@ -81,6 +80,49 @@ const imageUrl = new URL(image, Astro.site);
     </main>
     
     <style>
+      .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        transition: all var(--transition-base);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+      }
+      
+      .nav-transparent {
+        background: rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+      
+      .nav-solid {
+        background: rgba(0, 0, 0, 0.9);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      }
+      
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--space-lg);
+      }
+      
+      .flex {
+        display: flex;
+      }
+      
+      .justify-between {
+        justify-content: space-between;
+      }
+      
+      .items-center {
+        align-items: center;
+      }
+      
+      .gap-6 {
+        gap: 1.5rem;
+      }
+      
       .nav-logo {
         display: flex;
         align-items: center;
