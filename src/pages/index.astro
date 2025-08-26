@@ -2,9 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer"
-  description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management."
->
+<Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer" description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management.">
   <style>
   /* White Theme Styles */
   body {
@@ -215,9 +213,9 @@ import Layout from '../layouts/Layout.astro';
       <p>Azure Cloud Solutions Engineer | Security Specialist</p>
       <p>Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.</p>
       <div class="hero-buttons">
-        <a class="btn btn-primary" href="#azure-projects">View Projects</a>
-        <a class="btn btn-secondary" href="#contact">Get in Touch</a>
-        <a class="btn btn-primary" href="mailto:ariff@aglobaltec.com?subject=Consulting%20inquiry%20from%20aglobaltec.com&body=Hi%20Ariff%2C%0A%0AI%27d%20like%20to%20discuss%20Azure%20security%2Fautomation%20consulting.%20Here%20are%20a%20few%20details%20about%20my%20project%3A%0A-%20Scope%3A%0A-%20Timeline%3A%0A-%20Budget%20(optional)%3A%0A%0AThanks%2C%0A">📧 Contact me</a>
+        <a href="#azure-projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+        <a href="mailto:ariff@aglobaltec.com" class="btn btn-primary" id="hero-contact-btn">✉️ Contact me</a>
       </div>
     </div>
   </section>
@@ -311,11 +309,50 @@ import Layout from '../layouts/Layout.astro';
       <h2>Get In Touch</h2>
       <p>Interested in collaborating on Azure cloud security solutions or discussing enterprise automation projects? Let's connect.</p>
       <div class="contact-links">
-        <a class="contact-link" href="mailto:ariff@aglobaltec.com?subject=Consulting%20inquiry%20from%20aglobaltec.com&body=Hi%20Ariff%2C%0A%0AI%27d%20like%20to%20discuss%20Azure%20security%2Fautomation%20consulting.%20Here%20are%20a%20few%20details%20about%20my%20project%3A%0A-%20Scope%3A%0A-%20Timeline%3A%0A-%20Budget%20(optional)%3A%0A%0AThanks%2C%0A">📧 ariff@aglobaltec.com</a>
-        <a class="contact-link" href="https://linkedin.com/in/ariff-mohamed">💼 LinkedIn</a>
-        <a class="contact-link" href="https://github.com/a-ariff">⚡ GitHub</a>
+        <a href="mailto:ariff@aglobaltec.com" class="contact-link" id="footer-contact-link">✉️ ariff@aglobaltec.com</a>
+        <a href="https://linkedin.com/in/ariff-mohamed" class="contact-link">💼 LinkedIn</a>
+        <a href="https://github.com/a-ariff" class="contact-link">⚡ GitHub</a>
       </div>
     </div>
   </section>
 
+  <script>
+    // Locale-based mailto configuration with source tracking
+    document.addEventListener('DOMContentLoaded', function() {
+      const isMysgLocale = /^en-(GB|SG|MY)$/i.test(navigator.language);
+      
+      // Base configuration
+      const emailBase = 'ariff@aglobaltec.com';
+      
+      // Configuration for different locales
+      const config = {
+        default: {
+          subject: encodeURIComponent('Inquiry from aglobaltec.com'),
+          body: encodeURIComponent('Hello Ariff,\n\nI am interested in discussing...')
+        },
+        mysg: {
+          subject: encodeURIComponent('Consulting enquiry from aglobaltec.com'),
+          body: encodeURIComponent('Hi Ariff,\n\nI am interested in discussing...\n\nPreferred contact method (WhatsApp/Email):')
+        }
+      };
+      
+      const selectedConfig = isMysgLocale ? config.mysg : config.default;
+      
+      // Update hero contact button
+      const heroBtn = document.getElementById('hero-contact-btn');
+      if (heroBtn) {
+        const heroSourceNote = encodeURIComponent('\n--\nSource: HeroButton (v1)');
+        const heroBody = selectedConfig.body + heroSourceNote;
+        heroBtn.href = `mailto:${emailBase}?subject=${selectedConfig.subject}&body=${heroBody}`;
+      }
+      
+      // Update footer contact link
+      const footerLink = document.getElementById('footer-contact-link');
+      if (footerLink) {
+        const footerSourceNote = encodeURIComponent('\n--\nSource: GetInTouch (v1)');
+        const footerBody = selectedConfig.body + footerSourceNote;
+        footerLink.href = `mailto:${emailBase}?subject=${selectedConfig.subject}&body=${footerBody}`;
+      }
+    });
+  </script>
 </Layout>
