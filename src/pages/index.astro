@@ -2,7 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer" description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management.">
+<Layout
+  title="Ariff Mohamed - Azure Cloud Solutions Engineer"
+  description="Expert Azure cloud solutions engineer specializing in security, automation, and compliance. Showcasing enterprise Azure projects including PowerShell automation, KQL analytics, storage security, and Intune device management."
+>
   <style>
   /* White Theme Styles */
   body {
@@ -213,9 +216,14 @@ import Layout from '../layouts/Layout.astro';
       <p>Azure Cloud Solutions Engineer | Security Specialist</p>
       <p>Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.</p>
       <div class="hero-buttons">
-        <a href="#azure-projects" class="btn btn-primary">View Projects</a>
-        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
-        <a href="mailto:ariff@aglobaltec.com" class="btn btn-primary" id="hero-contact-btn">✉️ Contact me</a>
+        <a class="btn btn-primary" href="#azure-projects">View Projects</a>
+        <a class="btn btn-secondary" href="#contact">Get in Touch</a>
+        <a class="btn btn-primary" href="mailto:ariff@aglobaltec.com" id="hero-contact-btn" aria-label="Contact me via email">
+          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align: -0.125em;">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <span style="margin-left: 0.35em;">Contact me</span>
+        </a>
       </div>
     </div>
   </section>
@@ -309,9 +317,14 @@ import Layout from '../layouts/Layout.astro';
       <h2>Get In Touch</h2>
       <p>Interested in collaborating on Azure cloud security solutions or discussing enterprise automation projects? Let's connect.</p>
       <div class="contact-links">
-        <a href="mailto:ariff@aglobaltec.com" class="contact-link" id="footer-contact-link">✉️ ariff@aglobaltec.com</a>
-        <a href="https://linkedin.com/in/ariff-mohamed" class="contact-link">💼 LinkedIn</a>
-        <a href="https://github.com/a-ariff" class="contact-link">⚡ GitHub</a>
+        <a class="contact-link" href="mailto:ariff@aglobaltec.com" id="footer-contact-link">
+          <svg width="1em" height="1em" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align: -0.125em;">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <span style="margin-left: 0.35em;">ariff@aglobaltec.com</span>
+        </a>
+        <a class="contact-link" href="https://linkedin.com/in/ariff-mohamed">💼 LinkedIn</a>
+        <a class="contact-link" href="https://github.com/a-ariff">⚡ GitHub</a>
       </div>
     </div>
   </section>
@@ -341,7 +354,7 @@ import Layout from '../layouts/Layout.astro';
       // Update hero contact button
       const heroBtn = document.getElementById('hero-contact-btn');
       if (heroBtn) {
-        const heroSourceNote = encodeURIComponent('\n--\nSource: HeroButton (v1)');
+        const heroSourceNote = encodeURIComponent('\n--\nSource: HeroButton (v2)\nUTM: section=hero&variant=A');
         const heroBody = selectedConfig.body + heroSourceNote;
         heroBtn.href = `mailto:${emailBase}?subject=${selectedConfig.subject}&body=${heroBody}`;
       }
@@ -349,7 +362,7 @@ import Layout from '../layouts/Layout.astro';
       // Update footer contact link
       const footerLink = document.getElementById('footer-contact-link');
       if (footerLink) {
-        const footerSourceNote = encodeURIComponent('\n--\nSource: GetInTouch (v1)');
+        const footerSourceNote = encodeURIComponent('\n--\nSource: GetInTouch (v2)\nUTM: section=contact&variant=B');
         const footerBody = selectedConfig.body + footerSourceNote;
         footerLink.href = `mailto:${emailBase}?subject=${selectedConfig.subject}&body=${footerBody}`;
       }
