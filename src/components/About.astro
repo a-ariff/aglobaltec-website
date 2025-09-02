@@ -11,101 +11,46 @@
     
     <div class="about-content">
       <div class="about-text">
-        <div class="about-intro">
-          <p>
-            I'm a dedicated Cloud Solutions Engineer and Azure Security Specialist with extensive expertise in 
-            designing, implementing, and securing cloud infrastructure. With a deep understanding of Microsoft Azure 
-            and cloud security best practices, I help organizations modernize their IT infrastructure while maintaining 
-            the highest standards of security and compliance.
-          </p>
-        </div>
+        <p>
+          I'm a dedicated Cloud Solutions Engineer and Azure Security Specialist with extensive expertise in 
+          designing, implementing, and securing cloud infrastructure. With a deep understanding of Microsoft Azure 
+          and cloud security best practices, I help organizations modernize their IT infrastructure while maintaining 
+          the highest standards of security and compliance.
+        </p>
         
         <div class="skills-section">
           <h3>Technical Expertise</h3>
-          <div class="skills-grid">
+          <div class="skills-categories">
             <div class="skill-category">
               <h4>Cloud Platforms</h4>
-              <div class="skills">
-                <span class="skill-tag">Microsoft Azure</span>
-                <span class="skill-tag">Azure Active Directory</span>
-                <span class="skill-tag">Azure DevOps</span>
-                <span class="skill-tag">Azure Resource Manager</span>
-                <span class="skill-tag">Azure Functions</span>
-                <span class="skill-tag">Azure SQL Database</span>
-                <span class="skill-tag">Azure Storage</span>
-              </div>
+              <ul>
+                <li>Microsoft Azure</li>
+                <li>Azure Active Directory</li>
+                <li>Azure DevOps</li>
+                <li>Azure Resource Manager</li>
+              </ul>
             </div>
             
             <div class="skill-category">
               <h4>Security & Compliance</h4>
-              <div class="skills">
-                <span class="skill-tag">Azure Security Center</span>
-                <span class="skill-tag">Azure Sentinel</span>
-                <span class="skill-tag">Identity & Access Management</span>
-                <span class="skill-tag">Multi-Factor Authentication</span>
-                <span class="skill-tag">Conditional Access</span>
-                <span class="skill-tag">Azure Key Vault</span>
-                <span class="skill-tag">Compliance Frameworks</span>
-              </div>
+              <ul>
+                <li>Azure Security Center</li>
+                <li>Identity & Access Management</li>
+                <li>Multi-Factor Authentication</li>
+                <li>Azure Key Vault</li>
+              </ul>
             </div>
             
             <div class="skill-category">
               <h4>Infrastructure & DevOps</h4>
-              <div class="skills">
-                <span class="skill-tag">Infrastructure as Code</span>
-                <span class="skill-tag">ARM Templates</span>
-                <span class="skill-tag">Terraform</span>
-                <span class="skill-tag">PowerShell</span>
-                <span class="skill-tag">Azure CLI</span>
-                <span class="skill-tag">CI/CD Pipelines</span>
-                <span class="skill-tag">Monitoring & Analytics</span>
-              </div>
+              <ul>
+                <li>Infrastructure as Code</li>
+                <li>ARM Templates</li>
+                <li>PowerShell</li>
+                <li>CI/CD Pipelines</li>
+              </ul>
             </div>
           </div>
-        </div>
-        
-        <div class="values-section">
-          <h3>Professional Values</h3>
-          <div class="values-grid">
-            <div class="value-item">
-              <div class="value-icon">🔒</div>
-              <div class="value-content">
-                <h4>Security First</h4>
-                <p>Every solution is designed with security as the foundation, implementing defense-in-depth strategies and zero-trust principles.</p>
-              </div>
-            </div>
-            
-            <div class="value-item">
-              <div class="value-icon">🚀</div>
-              <div class="value-content">
-                <h4>Innovation & Efficiency</h4>
-                <p>Leveraging cutting-edge cloud technologies to drive business innovation while optimizing costs and performance.</p>
-              </div>
-            </div>
-            
-            <div class="value-item">
-              <div class="value-icon">🤝</div>
-              <div class="value-content">
-                <h4>Collaboration & Knowledge Sharing</h4>
-                <p>Working closely with teams to ensure successful cloud adoption and sharing expertise to empower others.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <div class="about-visual">
-        <div class="image-placeholder">
-          <svg width="300" height="350" viewBox="0 0 300 350" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="300" height="350" rx="20" fill="#f8fafc"/>
-            <rect x="50" y="50" width="200" height="250" rx="10" fill="#e2e8f0"/>
-            <rect x="70" y="80" width="160" height="20" rx="4" fill="#cbd5e1"/>
-            <rect x="70" y="120" width="120" height="16" rx="4" fill="#cbd5e1"/>
-            <rect x="70" y="150" width="140" height="16" rx="4" fill="#cbd5e1"/>
-            <rect x="70" y="180" width="100" height="16" rx="4" fill="#cbd5e1"/>
-            <circle cx="150" cy="240" r="30" fill="#3b82f6"/>
-            <path d="M140 240l8 8 16-16" stroke="white" stroke-width="2" fill="none"/>
-          </svg>
         </div>
       </div>
     </div>
@@ -114,161 +59,97 @@
 
 <style>
   .about {
-    padding: 6rem 0;
-    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+    padding: 4rem 0;
+    background-color: var(--background-secondary, #f8fafc);
   }
   
   .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 2rem;
   }
   
   .section-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
   
   .section-title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    color: var(--text-color);
+    font-size: 2.25rem;
+    font-weight: 600;
+    color: var(--text-primary, #1a202c);
     margin-bottom: 1rem;
   }
   
   .section-subtitle {
-    font-size: 1.2rem;
-    color: var(--text-secondary);
-    max-width: 600px;
+    font-size: 1.125rem;
+    color: var(--text-secondary, #4a5568);
+    max-width: 500px;
     margin: 0 auto;
-    line-height: 1.6;
+    line-height: 1.5;
   }
   
   .about-content {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 4rem;
-    align-items: start;
+    max-width: 800px;
+    margin: 0 auto;
   }
   
-  .about-intro {
-    margin-bottom: 3rem;
-  }
-  
-  .about-intro p {
+  .about-text p {
     font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--text-secondary);
+    line-height: 1.7;
+    color: var(--text-secondary, #4a5568);
+    margin-bottom: 2rem;
   }
   
-  .skills-section {
-    margin-bottom: 3rem;
-  }
-  
-  .skills-section h3,
-  .values-section h3 {
+  .skills-section h3 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--text-color);
+    color: var(--text-primary, #1a202c);
     margin-bottom: 1.5rem;
   }
   
-  .skills-grid {
+  .skills-categories {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
-  }
-  
-  .skill-category h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 0.8rem;
-  }
-  
-  .skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-  }
-  
-  .skill-tag {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    background: var(--primary-color);
-    color: white;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 500;
-  }
-  
-  .values-section {
     margin-top: 2rem;
   }
   
-  .values-grid {
-    display: grid;
-    gap: 1.5rem;
-  }
-  
-  .value-item {
-    display: flex;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-  
-  .value-icon {
-    font-size: 2rem;
-    flex-shrink: 0;
-  }
-  
-  .value-content h4 {
-    font-size: 1.1rem;
+  .skill-category h4 {
+    font-size: 1.125rem;
     font-weight: 600;
-    color: var(--text-color);
-    margin-bottom: 0.5rem;
+    color: var(--text-primary, #1a202c);
+    margin-bottom: 0.75rem;
   }
   
-  .value-content p {
-    color: var(--text-secondary);
-    line-height: 1.6;
+  .skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
   
-  .about-visual {
-    display: flex;
-    justify-content: center;
+  .skill-category li {
+    padding: 0.5rem 0;
+    color: var(--text-secondary, #4a5568);
+    border-bottom: 1px solid var(--border-color, #e2e8f0);
   }
   
-  .image-placeholder {
-    border-radius: 20px;
-    overflow: hidden;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  .skill-category li:last-child {
+    border-bottom: none;
   }
   
   @media (max-width: 768px) {
     .about {
-      padding: 4rem 0;
-    }
-    
-    .about-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
+      padding: 3rem 0;
     }
     
     .section-title {
-      font-size: 2rem;
+      font-size: 1.875rem;
     }
     
-    .skills-grid {
+    .skills-categories {
+      grid-template-columns: 1fr;
       gap: 1.5rem;
-    }
-    
-    .about-visual {
-      order: -1;
-    }
-    
-    .image-placeholder svg {
-      width: 250px;
-      height: 300px;
     }
   }
 </style>
