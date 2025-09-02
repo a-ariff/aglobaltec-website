@@ -34,248 +34,126 @@ import Layout from '../layouts/Layout.astro';
       <div class="hero-visual">
         <div class="floating-icon azure-icon">☁️</div>
         <div class="floating-icon security-icon">🔒</div>
-        <div class="floating-icon automation-icon">⚡</div>
+        <div class="floating-icon automation-icon">⚙️</div>
       </div>
-    </div>
     </section>
 
-    <!-- Rhyming Clock Widget Section -->
-    <section class="rhyming-clock-section" id="clock">
-      <div class="clock-container">
-        <div class="clock-header">
-          <h2 class="clock-title">Time in Rhyme</h2>
-          <p class="clock-subtitle">Where every moment finds its meter</p>
-        </div>
-        
-        <div class="clock-widget">
-          <div class="digital-time" id="digitalTime">14:10</div>
-          <div class="rhyming-time" id="rhymingTime">
-            <p class="rhyme-line">The clock strikes ten past two so bright,</p>
-            <p class="rhyme-line">As afternoon embraces light.</p>
+    <!-- About Section -->
+    <section class="about-section" id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              I'm a passionate Cloud Solutions Engineer with extensive experience in Azure cloud infrastructure and cybersecurity. Currently pursuing advanced cybersecurity certifications at MIT, I specialize in designing secure, scalable cloud architectures for enterprise environments.
+            </p>
+            <p>
+              My expertise spans from implementing zero-trust security models to automating complex cloud deployment processes. I believe in the power of technology to transform businesses while maintaining the highest security standards.
+            </p>
+          </div>
+          <div class="about-skills">
+            <div class="skill-category">
+              <h3>Cloud Platforms</h3>
+              <ul>
+                <li>Microsoft Azure</li>
+                <li>Azure DevOps</li>
+                <li>Azure Security Center</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Security</h3>
+              <ul>
+                <li>Zero Trust Architecture</li>
+                <li>Identity & Access Management</li>
+                <li>Vulnerability Assessment</li>
+              </ul>
+            </div>
+            <div class="skill-category">
+              <h3>Automation</h3>
+              <ul>
+                <li>Infrastructure as Code</li>
+                <li>CI/CD Pipelines</li>
+                <li>PowerShell & Python</li>
+              </ul>
+            </div>
           </div>
         </div>
-        
-        <div class="clock-decoration">
-          <div class="time-orb orb-1">🕐</div>
-          <div class="time-orb orb-2">⏰</div>
-          <div class="time-orb orb-3">⏱️</div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="projects-grid">
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Enterprise Azure Migration</h3>
+              <span class="project-tag">Cloud Architecture</span>
+            </div>
+            <p class="project-description">
+              Led the migration of a Fortune 500 company's entire infrastructure to Azure, implementing security best practices and achieving 99.9% uptime.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Azure</span>
+              <span class="tech-tag">Security Center</span>
+              <span class="tech-tag">DevOps</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Zero Trust Implementation</h3>
+              <span class="project-tag">Security</span>
+            </div>
+            <p class="project-description">
+              Designed and implemented a comprehensive zero-trust security model for a multinational corporation, reducing security incidents by 75%.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Azure AD</span>
+              <span class="tech-tag">Conditional Access</span>
+              <span class="tech-tag">MFA</span>
+            </div>
+          </div>
+          
+          <div class="project-card">
+            <div class="project-header">
+              <h3>Automated Compliance Pipeline</h3>
+              <span class="project-tag">Automation</span>
+            </div>
+            <p class="project-description">
+              Built an automated compliance monitoring and remediation system using Azure Policy and PowerShell, ensuring continuous regulatory compliance.
+            </p>
+            <div class="project-tech">
+              <span class="tech-tag">Azure Policy</span>
+              <span class="tech-tag">PowerShell</span>
+              <span class="tech-tag">Logic Apps</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Azure Projects Section -->
-    <section class="projects-section" id="projects">
-      <div class="projects-container">
-        <h2 class="section-title">Azure Cloud Projects</h2>
-        <!-- Projects content will go here -->
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get in Touch</h2>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p>Ready to discuss your cloud security needs? Let's connect and explore how we can transform your infrastructure.</p>
+            <div class="contact-links">
+              <a href="mailto:ariff@aglobaltec.com" class="contact-link">
+                <span class="contact-icon">📧</span>
+                ariff@aglobaltec.com
+              </a>
+              <a href="https://linkedin.com/in/ariff-mohamed" class="contact-link">
+                <span class="contact-icon">💼</span>
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-
   </main>
 </Layout>
-
-<style>
-  /* Rhyming Clock Widget Styles */
-  .rhyming-clock-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    padding: 4rem 2rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  .clock-container {
-    max-width: 800px;
-    margin: 0 auto;
-    text-align: center;
-    position: relative;
-    z-index: 2;
-  }
-
-  .clock-header {
-    margin-bottom: 3rem;
-  }
-
-  .clock-title {
-    font-size: 3rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 0.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  }
-
-  .clock-subtitle {
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.8);
-    font-style: italic;
-  }
-
-  .clock-widget {
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    padding: 2rem;
-    margin: 2rem 0;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-  }
-
-  .digital-time {
-    font-size: 4rem;
-    font-weight: 300;
-    color: white;
-    font-family: 'Courier New', monospace;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 0 20px rgba(255,255,255,0.3);
-  }
-
-  .rhyming-time {
-    font-size: 1.3rem;
-    line-height: 1.6;
-  }
-
-  .rhyme-line {
-    color: rgba(255, 255, 255, 0.9);
-    margin: 0.5rem 0;
-    font-style: italic;
-    animation: fadeInRhyme 0.8s ease-in-out;
-  }
-
-  .clock-decoration {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-  }
-
-  .time-orb {
-    position: absolute;
-    font-size: 2rem;
-    animation: floatOrb 6s ease-in-out infinite;
-    opacity: 0.6;
-  }
-
-  .time-orb.orb-1 {
-    top: 20%;
-    left: 10%;
-    animation-delay: 0s;
-  }
-
-  .time-orb.orb-2 {
-    top: 60%;
-    right: 15%;
-    animation-delay: 2s;
-  }
-
-  .time-orb.orb-3 {
-    bottom: 20%;
-    left: 20%;
-    animation-delay: 4s;
-  }
-
-  @keyframes fadeInRhyme {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-    100% {
-      opacity: 0.9;
-      transform: translateY(0);
-    }
-  }
-
-  @keyframes floatOrb {
-    0%, 100% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-      transform: translateY(-20px) rotate(180deg);
-    }
-  }
-
-  /* Responsive Design */
-  @media (max-width: 768px) {
-    .rhyming-clock-section {
-      padding: 3rem 1rem;
-    }
-    
-    .clock-title {
-      font-size: 2.5rem;
-    }
-    
-    .digital-time {
-      font-size: 3rem;
-    }
-    
-    .rhyming-time {
-      font-size: 1.1rem;
-    }
-  }
-</style>
-
-<script>
-  // Rhyming Clock Widget JavaScript
-  function updateRhymingClock() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    
-    // Update digital time
-    const digitalTimeElement = document.getElementById('digitalTime');
-    if (digitalTimeElement) {
-      digitalTimeElement.textContent = now.toLocaleTimeString('en-US', { 
-        hour12: false, 
-        hour: '2-digit', 
-        minute: '2-digit' 
-      });
-    }
-    
-    // Generate rhyming time
-    const rhymingTimeElement = document.getElementById('rhymingTime');
-    if (rhymingTimeElement) {
-      const rhyme = generateTimeRhyme(hours, minutes);
-      rhymingTimeElement.innerHTML = `
-        <p class="rhyme-line">${rhyme.line1}</p>
-        <p class="rhyme-line">${rhyme.line2}</p>
-      `;
-    }
-  }
-  
-  function generateTimeRhyme(hours, minutes) {
-    const hourWords = [
-      'twelve', 'one', 'two', 'three', 'four', 'five', 'six',
-      'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
-      'one', 'two', 'three', 'four', 'five', 'six',
-      'seven', 'eight', 'nine', 'ten', 'eleven'
-    ];
-    
-    const minutePhrase = minutes < 15 ? 'past' : minutes < 45 ? 'past' : 'to';
-    const displayHour = hours > 12 ? hours - 12 : hours === 0 ? 12 : hours;
-    const hourWord = hourWords[displayHour];
-    
-    // Simple rhyme patterns based on time
-    const rhymes = [
-      {
-        line1: `The clock strikes ${hourWord} with morning's gleam,`,
-        line2: `As time flows by like a gentle stream.`
-      },
-      {
-        line1: `At ${hourWord} o'clock the world turns bright,`,
-        line2: `Each moment dancing in the light.`
-      },
-      {
-        line1: `Time whispers softly, '${hourWord}' it says,`,
-        line2: `As peaceful moments gently spread.`
-      }
-    ];
-    
-    return rhymes[Math.floor(Math.random() * rhymes.length)];
-  }
-  
-  // Initialize and update every minute
-  document.addEventListener('DOMContentLoaded', function() {
-    updateRhymingClock();
-    setInterval(updateRhymingClock, 60000);
-  });
-</script>
