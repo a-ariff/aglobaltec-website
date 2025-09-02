@@ -22,1471 +22,260 @@ import Layout from '../layouts/Layout.astro';
         </p>
         
         <div class="hero-buttons">
-          <a href="#projects" class="btn-primary pulse-animation">
-          <span>View Projects</span>
-          <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18">
-            <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
+          <a class="btn-primary pulse-animation" href="#projects">
+          View Projects
+          <svg class="arrow-icon" height="18" viewBox="0 0 24 24" width="18">
+            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="currentColor"></path>
           </svg>
         </a>
-        <a href="#contact" class="btn-secondary slide-animation">Get in Touch</a>
+        <a class="btn-secondary slide-animation" href="#contact">Get in Touch</a>
       </div>
       
       <div class="hero-visual">
         <div class="floating-icon azure-icon">☁️</div>
         <div class="floating-icon security-icon">🔒</div>
         <div class="floating-icon automation-icon">⚡</div>
-        <div class="floating-icon code-icon">💻</div>
-        <div class="floating-icon shield-icon">🛡️</div>
       </div>
+    </div>
     </section>
 
-    <!-- Colorful Projects Section -->
-    <section class="projects-section" id="projects">
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="section-title gradient-text">Azure Projects</h2>
-          <p class="section-subtitle">Enterprise Azure automation and security solutions</p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Azure Automation Hub - Blue Theme -->
-          <div class="project-card reveal blue-theme" data-category="azure">
-            <div class="project-icon">☁️</div>
-            <div class="project-content">
-              <h3 class="project-title">Azure Automation Hub</h3>
-              <p class="project-description">
-                Comprehensive PowerShell runbook automation platform for enterprise user management, 
-                resource provisioning, and operational workflows. Features advanced scheduling, error handling, and audit trails.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">PowerShell</span>
-                <span class="tech-tag">Azure</span>
-                <span class="tech-tag">Automation</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <a href="https://automation.aglobaltec.com" class="project-link primary">
-                <span>View Documentation</span>
-                <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16">
-                  <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="project-overlay"></div>
-          </div>
-
-          <!-- Log Analytics Toolkit - Purple Theme -->
-          <div class="project-card reveal purple-theme" data-category="azure">
-            <div class="project-icon">📊</div>
-            <div class="project-content">
-              <h3 class="project-title">Log Analytics Toolkit</h3>
-              <p class="project-description">
-                Advanced KQL query library and monitoring dashboard suite for Azure security insights, 
-                performance analysis, and compliance reporting. Real-time alerting and custom workbooks included.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">KQL</span>
-                <span class="tech-tag">Azure Monitor</span>
-                <span class="tech-tag">Security</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <a href="https://guides.aglobaltec.com" class="project-link primary">
-                <span>View Documentation</span>
-                <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16">
-                  <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="project-overlay"></div>
-          </div>
-
-          <!-- Secure Storage Patterns - Green Theme -->
-          <div class="project-card reveal green-theme" data-category="azure">
-            <div class="project-icon">🔒</div>
-            <div class="project-content">
-              <h3 class="project-title">Secure Storage Patterns</h3>
-              <p class="project-description">
-                Enterprise-grade Azure storage security implementations featuring encryption at rest and in transit, 
-                compliance frameworks, access policies, and data governance best practices.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Azure Storage</span>
-                <span class="tech-tag">Security</span>
-                <span class="tech-tag">Compliance</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <a href="https://guides.aglobaltec.com" class="project-link primary">
-                <span>View Documentation</span>
-                <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16">
-                  <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="project-overlay"></div>
-          </div>
-
-          <!-- Device Compliance Monitor - Orange Theme -->
-          <div class="project-card reveal orange-theme" data-category="azure">
-            <div class="project-icon">📱</div>
-            <div class="project-content">
-              <h3 class="project-title">Device Compliance Monitor</h3>
-              <p class="project-description">
-                Microsoft Intune-powered device management and compliance monitoring solution. 
-                Automated policy enforcement, security baselines, and comprehensive reporting for enterprise endpoints.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Microsoft Intune</span>
-                <span class="tech-tag">Compliance</span>
-                <span class="tech-tag">MDM</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <a href="https://guides.aglobaltec.com" class="project-link primary">
-                <span>View Documentation</span>
-                <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16">
-                  <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="project-overlay"></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="section-title gradient-text-alt">Development Tools</h2>
-          <p class="section-subtitle">Cross-platform tools and infrastructure solutions</p>
-        </div>
-
-        <div class="projects-grid">
-          <!-- Browser MDM Automation - Red Theme -->
-          <div class="project-card reveal red-theme" data-category="development">
-            <div class="project-icon">🌐</div>
-            <div class="project-content">
-              <h3 class="project-title">Browser MDM Automation</h3>
-              <p class="project-description">
-                Cross-platform browser policy management and automation scripts for macOS and Windows endpoints. 
-                Comprehensive Microsoft Intune MDM popup policy templates with PowerShell automation.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">PowerShell</span>
-                <span class="tech-tag">Intune</span>
-                <span class="tech-tag">MDM</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/a-ariff" class="project-link secondary">
-                <span>View Repository</span>
-                <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16">
-                  <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="project-overlay"></div>
-          </div>
-
-          <!-- Rust Self-Host Server - Teal Theme -->
-          <div class="project-card reveal teal-theme" data-category="development">
-            <div class="project-icon">⚡</div>
-            <div class="project-content">
-              <h3 class="project-title">Rust Self-Host Server</h3>
-              <p class="project-description">
-                Self-hosted server infrastructure template built with Rust for reliable and secure deployments. 
-                High-performance, memory-safe server applications with modern async patterns.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">Rust</span>
-                <span class="tech-tag">Async</span>
-                <span class="tech-tag">Server</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <a href="https://github.com/a-ariff" class="project-link secondary">
-                <span>View Repository</span>
-                <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16">
-                  <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="project-overlay"></div>
-          </div>
-
-          <!-- Todo Application - Pink Theme -->
-          <div class="project-card reveal pink-theme" data-category="development">
-            <div class="project-icon">✅</div>
-            <div class="project-content">
-              <h3 class="project-title">Todo Application</h3>
-              <p class="project-description">
-                Modern, responsive task management application built with modern web technologies. 
-                Features task organization, priority management, and progress tracking with clean UI.
-              </p>
-              <div class="project-tech">
-                <span class="tech-tag">JavaScript</span>
-                <span class="tech-tag">React</span>
-                <span class="tech-tag">UI/UX</span>
-              </div>
-            </div>
-            <div class="project-links">
-              <a href="https://todo.aglobaltec.com" class="project-link accent">
-                <span>Try Application</span>
-                <svg class="link-icon" viewBox="0 0 24 24" width="16" height="16">
-                  <path fill="currentColor" d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/>
-                </svg>
-              </a>
-            </div>
-            <div class="project-overlay"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Colorful About Me Section -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <div class="about-content reveal">
-          <h2 class="section-title gradient-text-3">About Me</h2>
-          <div class="about-text">
-            <p>
-              As an Azure Cloud Solutions Engineer specializing in security architecture, I bring deep technical expertise 
-              in enterprise cloud infrastructure, automation, and compliance. My experience spans large-scale Azure implementations, 
-              security frameworks, and innovative problem-solving for complex business challenges.
-            </p>
-            <p>
-              Currently advancing my expertise through MIT's Cybersecurity program, I'm passionate about developing secure, 
-              scalable Azure solutions that drive business value while maintaining the highest security and compliance standards.
-            </p>
-          </div>
-          
-          <div class="specializations">
-            <h3 class="spec-title">Azure Specializations</h3>
-            <div class="specs-grid">
-              <div class="spec-item spec-blue">✓ Azure Security Architecture</div>
-              <div class="spec-item spec-purple">✓ PowerShell Automation & Runbooks</div>
-              <div class="spec-item spec-green">✓ KQL & Log Analytics</div>
-              <div class="spec-item spec-orange">✓ Microsoft Intune Management</div>
-              <div class="spec-item spec-red">✓ Storage Security & Encryption</div>
-              <div class="spec-item spec-teal">✓ Compliance & Governance</div>
-              <div class="spec-item spec-pink">✓ Identity & Access Management</div>
-              <div class="spec-item spec-indigo">✓ DevSecOps Implementation</div>
-              <div class="spec-item spec-yellow">✓ Threat Detection & Response</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Vibrant Contact Section -->
-    <section class="contact-section" id="contact">
-      <div class="contact-bg">
-        <div class="contact-orb contact-orb-1"></div>
-        <div class="contact-orb contact-orb-2"></div>
-        <div class="contact-orb contact-orb-3"></div>
-      </div>
-      <div class="container">
-        <div class="section-header reveal">
-          <h2 class="section-title contact-title">Get In Touch</h2>
-          <p class="section-subtitle contact-subtitle">
-            Interested in collaborating on Azure cloud security solutions or discussing enterprise automation projects? Let's connect.
-          </p>
+    <!-- Rhyming Clock Widget Section -->
+    <section class="rhyming-clock-section" id="clock">
+      <div class="clock-container">
+        <div class="clock-header">
+          <h2 class="clock-title">Time in Rhyme</h2>
+          <p class="clock-subtitle">Where every moment finds its meter</p>
         </div>
         
-        <div class="contact-links">
-          <a href="mailto:ariff@aglobaltec.com" class="contact-link email-link">
-            📧 ariff@aglobaltec.com
-          </a>
-          <a href="https://linkedin.com/in/ariff-mohamed" class="contact-link linkedin-link">
-            💼 LinkedIn
-          </a>
-          <a href="https://github.com/a-ariff" class="contact-link github-link">
-            ⚡ GitHub
-          </a>
+        <div class="clock-widget">
+          <div class="digital-time" id="digitalTime">14:10</div>
+          <div class="rhyming-time" id="rhymingTime">
+            <p class="rhyme-line">The clock strikes ten past two so bright,</p>
+            <p class="rhyme-line">As afternoon embraces light.</p>
+          </div>
+        </div>
+        
+        <div class="clock-decoration">
+          <div class="time-orb orb-1">🕐</div>
+          <div class="time-orb orb-2">⏰</div>
+          <div class="time-orb orb-3">⏱️</div>
         </div>
       </div>
     </section>
+
+    <!-- Azure Projects Section -->
+    <section class="projects-section" id="projects">
+      <div class="projects-container">
+        <h2 class="section-title">Azure Cloud Projects</h2>
+        <!-- Projects content will go here -->
+      </div>
+    </section>
+
   </main>
 </Layout>
 
 <style>
-/* Import colorful fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+  /* Rhyming Clock Widget Styles */
+  .rhyming-clock-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 4rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
 
-/* Color Variables */
-:root {
-  --blue-primary: #0078d4;
-  --blue-secondary: #005a9e;
-  --purple-primary: #8b5cf6;
-  --purple-secondary: #7c3aed;
-  --green-primary: #10b981;
-  --green-secondary: #059669;
-  --orange-primary: #f59e0b;
-  --orange-secondary: #d97706;
-  --red-primary: #ef4444;
-  --red-secondary: #dc2626;
-  --teal-primary: #14b8a6;
-  --teal-secondary: #0d9488;
-  --pink-primary: #ec4899;
-  --pink-secondary: #db2777;
-  --indigo-primary: #6366f1;
-  --indigo-secondary: #5b21b6;
-  --yellow-primary: #eab308;
-  --yellow-secondary: #ca8a04;
-}
+  .clock-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+  }
 
-/* Reset and Base Styles */
-* {
-  box-sizing: border-box;
-}
+  .clock-header {
+    margin-bottom: 3rem;
+  }
 
-body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
+  .clock-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
+  .clock-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-style: italic;
+  }
 
-/* Colorful Hero Section */
-.hero-section {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(1200px 600px at 20% -10%, #23324a 0%, transparent 60%),
-            radial-gradient(900px 500px at 120% 20%, #1f3a5b 0%, transparent 55%),
-            linear-gradient(180deg, #0b1220 0%, #0a0f1a 100%);
-  color: white;
-  overflow: hidden;
-  text-align: center;
-  padding: 2rem;
-}
+  .clock-widget {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  }
 
-/* Color Orbs */
-.color-orbs {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
+  .digital-time {
+    font-size: 4rem;
+    font-weight: 300;
+    color: white;
+    font-family: 'Courier New', monospace;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 20px rgba(255,255,255,0.3);
+  }
 
-.orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  opacity: 0.7;
-  animation: float 8s ease-in-out infinite;
-}
+  .rhyming-time {
+    font-size: 1.3rem;
+    line-height: 1.6;
+  }
 
-.orb-1 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, var(--blue-primary), var(--purple-primary));
-  top: 10%;
-  left: 10%;
-  animation-delay: 0s;
-}
+  .rhyme-line {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0.5rem 0;
+    font-style: italic;
+    animation: fadeInRhyme 0.8s ease-in-out;
+  }
 
-.orb-2 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, var(--green-primary), var(--teal-primary));
-  top: 60%;
-  right: 10%;
-  animation-delay: 2s;
-}
+  .clock-decoration {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
 
-.orb-3 {
-  width: 200px;
-  height: 200px;
-  background: radial-gradient(circle, var(--pink-primary), var(--red-primary));
-  bottom: 20%;
-  left: 30%;
-  animation-delay: 4s;
-}
-
-.orb-4 {
-  width: 350px;
-  height: 350px;
-  background: radial-gradient(circle, var(--orange-primary), var(--yellow-primary));
-  top: 40%;
-  right: 30%;
-  animation-delay: 6s;
-}
-
-.hero-content {
-  max-width: 800px;
-  z-index: 2;
-  position: relative;
-}
-
-/* Rainbow Text Effect */
-.rainbow-text {
-  font-size: 3.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  opacity: 1 !important;
-  visibility: visible !important;
-  animation: fadeInUp 1s ease-out, continuousRainbow 2s linear infinite 1s;
-  background: linear-gradient(90deg,
-    #ff0080, #ff8c00, #40e0d0, #9370db, #00ff00, #ff4500, #ff0080, #ff0080);
-  background-size: 800% 800%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: white;
-  text-shadow: 0 2px 24px rgba(64, 224, 208, 0.15), 0 0 40px rgba(255, 255, 255, 0.08);
-}
-
-@keyframes continuousRainbow {
-  0%   { background-position: 0% 50%;   filter: hue-rotate(0deg) brightness(1.2); }
-  25%  { background-position: 100% 50%; filter: hue-rotate(90deg) brightness(1.3); }
-  50%  { background-position: 200% 50%; filter: hue-rotate(180deg) brightness(1.4); }
-  75%  { background-position: 300% 50%; filter: hue-rotate(270deg) brightness(1.3); }
-  100% { background-position: 400% 50%; filter: hue-rotate(360deg) brightness(1.2); }
-}
-
-
-.typing-animation {
-  font-size: 1.5rem;
-  font-weight: 300;
-  margin-bottom: 1.5rem;
-  overflow: hidden;
-  border-right: 3px solid rgba(255, 255, 255, 0.7);
-  white-space: nowrap;
-  animation: 
-    fadeInUp 1s ease-out 0.2s,
-    typing 3.5s steps(60, end) 0.5s,
-    blink-caret 0.75s step-end infinite 0.5s;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero-description {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  opacity: 0.95;
-  line-height: 1.6;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.fade-in-delayed {
-  animation: fadeInUp 1s ease-out 0.4s;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.hero-buttons {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  animation: fadeInUp 1s ease-out 0.6s;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-
-.btn-primary, .btn-secondary, .btn-accent {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.btn-primary {
-  background: linear-gradient(45deg, var(--blue-primary), var(--purple-primary));
-  color: white;
-  box-shadow: 0 4px 20px rgba(0, 120, 212, 0.4);
-}
-
-.btn-secondary {
-  background: linear-gradient(45deg, var(--green-primary), var(--teal-primary));
-  color: white;
-  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.4);
-}
-
-.btn-accent {
-  background: linear-gradient(45deg, var(--pink-primary), var(--orange-primary));
-  color: white;
-  box-shadow: 0 4px 20px rgba(236, 72, 153, 0.4);
-}
-
-.btn-primary:hover, .btn-secondary:hover, .btn-accent:hover {
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
-}
-
-.pulse-animation {
-  animation: colorPulse 2s infinite;
-}
-
-@keyframes colorPulse {
-  0% { box-shadow: 0 0 0 0 rgba(0, 120, 212, 0.7); }
-  70% { box-shadow: 0 0 0 15px rgba(0, 120, 212, 0); }
-  100% { box-shadow: 0 0 0 0 rgba(0, 120, 212, 0); }
-}
-
-/* Enhanced Floating Icons */
-.hero-visual {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.floating-icon {
-  position: absolute;
-  font-size: 3rem;
-  opacity: 0.8;
-  animation: floatIconColor 6s ease-in-out infinite;
-  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.3));
-}
-
-.azure-icon {
-  top: 15%;
-  left: 10%;
-  animation-delay: 0s;
-}
-
-.security-icon {
-  top: 25%;
-  right: 15%;
-  animation-delay: 1s;
-}
-
-.automation-icon {
-  bottom: 30%;
-  left: 15%;
-  animation-delay: 2s;
-}
-
-.code-icon {
-  top: 60%;
-  right: 30%;
-  animation-delay: 3s;
-}
-
-.shield-icon {
-  bottom: 15%;
-  right: 10%;
-  animation-delay: 4s;
-}
-
-@keyframes floatIconColor {
-  0%, 100% { 
-    transform: translateY(0px) rotate(0deg);
+  .time-orb {
+    position: absolute;
+    font-size: 2rem;
+    animation: floatOrb 6s ease-in-out infinite;
     opacity: 0.6;
-    filter: hue-rotate(0deg);
   }
-  50% { 
-    transform: translateY(-25px) rotate(180deg);
-    opacity: 0.9;
-    filter: hue-rotate(180deg);
+
+  .time-orb.orb-1 {
+    top: 20%;
+    left: 10%;
+    animation-delay: 0s;
   }
-}
 
-/* Colorful Projects Section */
-.projects-section {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-  position: relative;
-}
-
-.section-header {
-  text-align: center;
-  margin-bottom: 4rem;
-}
-
-.section-title {
-  font-size: 3rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.gradient-text {
-  background: linear-gradient(45deg, var(--blue-primary), var(--purple-primary), var(--teal-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-alt {
-  background: linear-gradient(45deg, var(--red-primary), var(--orange-primary), var(--yellow-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-3 {
-  background: linear-gradient(45deg, var(--pink-primary), var(--purple-primary), var(--indigo-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: linear-gradient(45deg, var(--blue-primary), var(--purple-primary), var(--teal-primary));
-  border-radius: 2px;
-}
-
-.section-subtitle {
-  font-size: 1.2rem;
-  color: #64748b;
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-/* Themed Project Cards */
-.project-card {
-  background: white;
-  border-radius: 20px;
-  padding: 2rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  cursor: pointer;
-  border: 2px solid transparent;
-}
-
-/* Blue Theme */
-.project-card.blue-theme {
-  border-color: rgba(0, 120, 212, 0.2);
-}
-
-.project-card.blue-theme:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(0, 120, 212, 0.25);
-  border-color: var(--blue-primary);
-}
-
-.project-card.blue-theme .project-icon {
-  background: linear-gradient(45deg, rgba(0, 120, 212, 0.1), rgba(0, 120, 212, 0.2));
-}
-
-.project-card.blue-theme:hover .project-icon {
-  background: linear-gradient(45deg, var(--blue-primary), var(--blue-secondary));
-  color: white;
-}
-
-/* Purple Theme */
-.project-card.purple-theme {
-  border-color: rgba(139, 92, 246, 0.2);
-}
-
-.project-card.purple-theme:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(139, 92, 246, 0.25);
-  border-color: var(--purple-primary);
-}
-
-.project-card.purple-theme .project-icon {
-  background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.2));
-}
-
-.project-card.purple-theme:hover .project-icon {
-  background: linear-gradient(45deg, var(--purple-primary), var(--purple-secondary));
-  color: white;
-}
-
-/* Green Theme */
-.project-card.green-theme {
-  border-color: rgba(16, 185, 129, 0.2);
-}
-
-.project-card.green-theme:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(16, 185, 129, 0.25);
-  border-color: var(--green-primary);
-}
-
-.project-card.green-theme .project-icon {
-  background: linear-gradient(45deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.2));
-}
-
-.project-card.green-theme:hover .project-icon {
-  background: linear-gradient(45deg, var(--green-primary), var(--green-secondary));
-  color: white;
-}
-
-/* Orange Theme */
-.project-card.orange-theme {
-  border-color: rgba(245, 158, 11, 0.2);
-}
-
-.project-card.orange-theme:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(245, 158, 11, 0.25);
-  border-color: var(--orange-primary);
-}
-
-.project-card.orange-theme .project-icon {
-  background: linear-gradient(45deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.2));
-}
-
-.project-card.orange-theme:hover .project-icon {
-  background: linear-gradient(45deg, var(--orange-primary), var(--orange-secondary));
-  color: white;
-}
-
-/* Red Theme */
-.project-card.red-theme {
-  border-color: rgba(239, 68, 68, 0.2);
-}
-
-.project-card.red-theme:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(239, 68, 68, 0.25);
-  border-color: var(--red-primary);
-}
-
-.project-card.red-theme .project-icon {
-  background: linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.2));
-}
-
-.project-card.red-theme:hover .project-icon {
-  background: linear-gradient(45deg, var(--red-primary), var(--red-secondary));
-  color: white;
-}
-
-/* Teal Theme */
-.project-card.teal-theme {
-  border-color: rgba(20, 184, 166, 0.2);
-}
-
-.project-card.teal-theme:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(20, 184, 166, 0.25);
-  border-color: var(--teal-primary);
-}
-
-.project-card.teal-theme .project-icon {
-  background: linear-gradient(45deg, rgba(20, 184, 166, 0.1), rgba(20, 184, 166, 0.2));
-}
-
-.project-card.teal-theme:hover .project-icon {
-  background: linear-gradient(45deg, var(--teal-primary), var(--teal-secondary));
-  color: white;
-}
-
-/* Pink Theme */
-.project-card.pink-theme {
-  border-color: rgba(236, 72, 153, 0.2);
-}
-
-.project-card.pink-theme:hover {
-  transform: translateY(-12px) scale(1.03);
-  box-shadow: 0 25px 60px rgba(236, 72, 153, 0.25);
-  border-color: var(--pink-primary);
-}
-
-.project-card.pink-theme .project-icon {
-  background: linear-gradient(45deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.2));
-}
-
-.project-card.pink-theme:hover .project-icon {
-  background: linear-gradient(45deg, var(--pink-primary), var(--pink-secondary));
-  color: white;
-}
-
-.project-icon {
-  font-size: 3rem;
-  margin-bottom: 1.5rem;
-  display: inline-block;
-  padding: 1rem;
-  border-radius: 15px;
-  transition: all 0.4s ease;
-}
-
-.project-card:hover .project-icon {
-  transform: scale(1.15) rotate(5deg);
-}
-
-.project-title {
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #1e293b;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-}
-
-.project-description {
-  color: #64748b;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-}
-
-.project-tech {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-/* Tech Tag Themes */
-.blue-theme .tech-tag {
-  background: rgba(0, 120, 212, 0.1);
-  color: var(--blue-primary);
-  border-color: rgba(0, 120, 212, 0.2);
-}
-
-.blue-theme:hover .tech-tag {
-  background: var(--blue-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.purple-theme .tech-tag {
-  background: rgba(139, 92, 246, 0.1);
-  color: var(--purple-primary);
-  border-color: rgba(139, 92, 246, 0.2);
-}
-
-.purple-theme:hover .tech-tag {
-  background: var(--purple-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.green-theme .tech-tag {
-  background: rgba(16, 185, 129, 0.1);
-  color: var(--green-primary);
-  border-color: rgba(16, 185, 129, 0.2);
-}
-
-.green-theme:hover .tech-tag {
-  background: var(--green-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.orange-theme .tech-tag {
-  background: rgba(245, 158, 11, 0.1);
-  color: var(--orange-primary);
-  border-color: rgba(245, 158, 11, 0.2);
-}
-
-.orange-theme:hover .tech-tag {
-  background: var(--orange-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.red-theme .tech-tag {
-  background: rgba(239, 68, 68, 0.1);
-  color: var(--red-primary);
-  border-color: rgba(239, 68, 68, 0.2);
-}
-
-.red-theme:hover .tech-tag {
-  background: var(--red-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.teal-theme .tech-tag {
-  background: rgba(20, 184, 166, 0.1);
-  color: var(--teal-primary);
-  border-color: rgba(20, 184, 166, 0.2);
-}
-
-.teal-theme:hover .tech-tag {
-  background: var(--teal-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.pink-theme .tech-tag {
-  background: rgba(236, 72, 153, 0.1);
-  color: var(--pink-primary);
-  border-color: rgba(236, 72, 153, 0.2);
-}
-
-.pink-theme:hover .tech-tag {
-  background: var(--pink-primary);
-  color: white;
-  transform: translateY(-2px);
-}
-
-.project-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  border-radius: 25px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.9rem;
-  transition: all 0.3s ease;
-}
-
-.project-link.primary {
-  background: linear-gradient(45deg, var(--blue-primary), var(--purple-primary));
-  color: white;
-  box-shadow: 0 4px 15px rgba(0, 120, 212, 0.3);
-}
-
-.project-link.secondary {
-  background: linear-gradient(45deg, var(--green-primary), var(--teal-primary));
-  color: white;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-}
-
-.project-link.accent {
-  background: linear-gradient(45deg, var(--pink-primary), var(--orange-primary));
-  color: white;
-  box-shadow: 0 4px 15px rgba(236, 72, 153, 0.3);
-}
-
-.project-link:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
-}
-
-.project-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  pointer-events: none;
-  border-radius: 20px;
-}
-
-.project-card.blue-theme:hover .project-overlay {
-  background: linear-gradient(135deg, rgba(0, 120, 212, 0.05), rgba(139, 92, 246, 0.05));
-  opacity: 1;
-}
-
-.project-card.purple-theme:hover .project-overlay {
-  background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(20, 184, 166, 0.05));
-  opacity: 1;
-}
-
-.project-card.green-theme:hover .project-overlay {
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(245, 158, 11, 0.05));
-  opacity: 1;
-}
-
-.project-card.orange-theme:hover .project-overlay {
-  background: linear-gradient(135deg, rgba(245, 158, 11, 0.05), rgba(239, 68, 68, 0.05));
-  opacity: 1;
-}
-
-.project-card.red-theme:hover .project-overlay {
-  background: linear-gradient(135deg, rgba(239, 68, 68, 0.05), rgba(236, 72, 153, 0.05));
-  opacity: 1;
-}
-
-.project-card.teal-theme:hover .project-overlay {
-  background: linear-gradient(135deg, rgba(20, 184, 166, 0.05), rgba(0, 120, 212, 0.05));
-  opacity: 1;
-}
-
-.project-card.pink-theme:hover .project-overlay {
-  background: linear-gradient(135deg, rgba(236, 72, 153, 0.05), rgba(139, 92, 246, 0.05));
-  opacity: 1;
-}
-
-/* Colorful About Section */
-.about-section {
-  padding: 5rem 0;
-  background: linear-gradient(135deg, #ffffff 0%, #f1f5f9 100%);
-}
-
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-text {
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 3rem;
-  color: #475569;
-}
-
-.specializations h3.spec-title {
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
-  background: linear-gradient(45deg, var(--indigo-primary), var(--purple-primary), var(--pink-primary));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.specs-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1rem;
-  text-align: left;
-}
-
-.spec-item {
-  padding: 1rem;
-  border-radius: 12px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-}
-
-/* Colorful Spec Items */
-.spec-blue {
-  background: linear-gradient(45deg, rgba(0, 120, 212, 0.1), rgba(0, 120, 212, 0.05));
-  color: var(--blue-primary);
-  border-color: rgba(0, 120, 212, 0.2);
-}
-
-.spec-purple {
-  background: linear-gradient(45deg, rgba(139, 92, 246, 0.1), rgba(139, 92, 246, 0.05));
-  color: var(--purple-primary);
-  border-color: rgba(139, 92, 246, 0.2);
-}
-
-.spec-green {
-  background: linear-gradient(45deg, rgba(16, 185, 129, 0.1), rgba(16, 185, 129, 0.05));
-  color: var(--green-primary);
-  border-color: rgba(16, 185, 129, 0.2);
-}
-
-.spec-orange {
-  background: linear-gradient(45deg, rgba(245, 158, 11, 0.1), rgba(245, 158, 11, 0.05));
-  color: var(--orange-primary);
-  border-color: rgba(245, 158, 11, 0.2);
-}
-
-.spec-red {
-  background: linear-gradient(45deg, rgba(239, 68, 68, 0.1), rgba(239, 68, 68, 0.05));
-  color: var(--red-primary);
-  border-color: rgba(239, 68, 68, 0.2);
-}
-
-.spec-teal {
-  background: linear-gradient(45deg, rgba(20, 184, 166, 0.1), rgba(20, 184, 166, 0.05));
-  color: var(--teal-primary);
-  border-color: rgba(20, 184, 166, 0.2);
-}
-
-.spec-pink {
-  background: linear-gradient(45deg, rgba(236, 72, 153, 0.1), rgba(236, 72, 153, 0.05));
-  color: var(--pink-primary);
-  border-color: rgba(236, 72, 153, 0.2);
-}
-
-.spec-indigo {
-  background: linear-gradient(45deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
-  color: var(--indigo-primary);
-  border-color: rgba(99, 102, 241, 0.2);
-}
-
-.spec-yellow {
-  background: linear-gradient(45deg, rgba(234, 179, 8, 0.1), rgba(234, 179, 8, 0.05));
-  color: var(--yellow-primary);
-  border-color: rgba(234, 179, 8, 0.2);
-}
-
-.spec-item:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-}
-
-/* Vibrant Contact Section */
-.contact-section {
-  padding: 5rem 0;
-  position: relative;
-  overflow: hidden;
-  background: linear-gradient(135deg, 
-    var(--purple-primary) 0%, 
-    var(--pink-primary) 25%, 
-    var(--orange-primary) 50%, 
-    var(--red-primary) 75%, 
-    var(--blue-primary) 100%);
-  color: white;
-  text-align: center;
-}
-
-.contact-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
-
-.contact-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
-  animation: floatContact 10s ease-in-out infinite;
-}
-
-.contact-orb-1 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, var(--teal-primary), var(--green-primary));
-  top: -10%;
-  left: -10%;
-  animation-delay: 0s;
-}
-
-.contact-orb-2 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, var(--yellow-primary), var(--orange-primary));
-  bottom: -10%;
-  right: -10%;
-  animation-delay: 3s;
-}
-
-.contact-orb-3 {
-  width: 250px;
-  height: 250px;
-  background: radial-gradient(circle, var(--indigo-primary), var(--purple-primary));
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  animation-delay: 6s;
-}
-
-@keyframes floatContact {
-  0%, 100% { transform: translateY(0px) rotate(0deg); }
-  33% { transform: translateY(-30px) rotate(120deg); }
-  66% { transform: translateY(15px) rotate(240deg); }
-}
-
-.container {
-  position: relative;
-  z-index: 2;
-}
-
-.contact-title {
-  color: white;
-  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.contact-subtitle {
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 3rem;
-}
-
-.contact-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 1.2rem 2.5rem;
-  border-radius: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.4s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-.email-link {
-  background: linear-gradient(45deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0.25));
-  backdrop-filter: blur(20px);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  color: white;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.linkedin-link {
-  background: linear-gradient(45deg, #0077b5, #005885);
-  color: white;
-  box-shadow: 0 4px 20px rgba(0, 119, 181, 0.4);
-}
-
-.github-link {
-  background: linear-gradient(45deg, #333, #24292e);
-  color: white;
-  box-shadow: 0 4px 20px rgba(51, 51, 51, 0.4);
-}
-
-.contact-link:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Reveal Animation */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-}
-
-.reveal.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Core Animations */
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
+  .time-orb.orb-2 {
+    top: 60%;
+    right: 15%;
+    animation-delay: 2s;
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+
+  .time-orb.orb-3 {
+    bottom: 20%;
+    left: 20%;
+    animation-delay: 4s;
   }
-}
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-
-@keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: rgba(255, 255, 255, 0.7); }
-}
-
-@keyframes float {
-  0%, 100% { 
-    transform: translateY(0px) rotate(0deg);
+  @keyframes fadeInRhyme {
+    0% {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    100% {
+      opacity: 0.9;
+      transform: translateY(0);
+    }
   }
-  50% { 
-    transform: translateY(-20px) rotate(180deg);
+
+  @keyframes floatOrb {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-20px) rotate(180deg);
+    }
   }
-}
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .hero-title { font-size: 2.5rem; }
-  .typing-animation { font-size: 1.2rem; }
-  .hero-buttons { flex-direction: column; align-items: center; }
-  .projects-grid { grid-template-columns: 1fr; gap: 1.5rem; }
-  .project-card { padding: 1.5rem; }
-  .section-title { font-size: 2.5rem; }
-  .contact-links { flex-direction: column; align-items: center; }
-  .specs-grid { grid-template-columns: 1fr; }
-  .orb { width: 200px !important; height: 200px !important; }
-  .floating-icon { font-size: 2rem; }
-}
-
-@media (max-width: 480px) {
-  .hero-title { font-size: 2rem; }
-  .typing-animation { font-size: 1rem; white-space: normal; border-right: none; }
-  .section-title { font-size: 2rem; }
-  .project-icon { font-size: 2.5rem; padding: 0.8rem; }
-  .orb { width: 150px !important; height: 150px !important; }
-}
-
-/* Accessibility */
-@media (prefers-reduced-motion: reduce) {
-  .hero-title, .typing-animation, .fade-in-delayed, .hero-buttons, .reveal {
-    animation: none;
-    opacity: 1;
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .rhyming-clock-section {
+      padding: 3rem 1rem;
+    }
+    
+    .clock-title {
+      font-size: 2.5rem;
+    }
+    
+    .digital-time {
+      font-size: 3rem;
+    }
+    
+    .rhyming-time {
+      font-size: 1.1rem;
+    }
   }
-  .floating-icon, .orb, .contact-orb { animation: none; }
-  .project-card, .btn-primary, .btn-secondary, .btn-accent { transition: none; }
-}
 </style>
 
 <script>
-// Enhanced Particle System with Colors
-class ColorfulParticles {
-  constructor() {
-    this.container = document.getElementById('particles');
-    if (!this.container) return;
+  // Rhyming Clock Widget JavaScript
+  function updateRhymingClock() {
+    const now = new Date();
+    const hours = now.getHours();
+    const minutes = now.getMinutes();
     
-    this.particles = [];
-    this.colors = ['#0078d4', '#8b5cf6', '#10b981', '#f59e0b', '#ef4444', '#14b8a6', '#ec4899'];
-    this.createParticles();
-    this.animateParticles();
-  }
-
-  createParticles() {
-    const particleCount = 20;
+    // Update digital time
+    const digitalTimeElement = document.getElementById('digitalTime');
+    if (digitalTimeElement) {
+      digitalTimeElement.textContent = now.toLocaleTimeString('en-US', { 
+        hour12: false, 
+        hour: '2-digit', 
+        minute: '2-digit' 
+      });
+    }
     
-    for (let i = 0; i < particleCount; i++) {
-      const particle = document.createElement('div');
-      const size = Math.random() * 6 + 2;
-      const color = this.colors[Math.floor(Math.random() * this.colors.length)];
-      
-      particle.style.cssText = `
-        position: absolute;
-        width: ${size}px;
-        height: ${size}px;
-        background: ${color};
-        border-radius: 50%;
-        left: ${Math.random() * 100}%;
-        top: ${Math.random() * 100}%;
-        pointer-events: none;
-        opacity: ${Math.random() * 0.6 + 0.2};
-        box-shadow: 0 0 10px ${color};
+    // Generate rhyming time
+    const rhymingTimeElement = document.getElementById('rhymingTime');
+    if (rhymingTimeElement) {
+      const rhyme = generateTimeRhyme(hours, minutes);
+      rhymingTimeElement.innerHTML = `
+        <p class="rhyme-line">${rhyme.line1}</p>
+        <p class="rhyme-line">${rhyme.line2}</p>
       `;
-      
-      this.container.appendChild(particle);
-      this.particles.push({
-        element: particle,
-        x: Math.random() * 100,
-        y: Math.random() * 100,
-        speedX: (Math.random() - 0.5) * 0.8,
-        speedY: (Math.random() - 0.5) * 0.8,
-        size: size,
-        color: color
-      });
     }
   }
-
-  animateParticles() {
-    this.particles.forEach(particle => {
-      particle.x += particle.speedX;
-      particle.y += particle.speedY;
-
-      if (particle.x > 100) particle.x = 0;
-      if (particle.x < 0) particle.x = 100;
-      if (particle.y > 100) particle.y = 0;
-      if (particle.y < 0) particle.y = 100;
-
-      particle.element.style.left = particle.x + '%';
-      particle.element.style.top = particle.y + '%';
-    });
-
-    requestAnimationFrame(() => this.animateParticles());
-  }
-}
-
-// Intersection Observer for reveal animations
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry, index) => {
-    if (entry.isIntersecting) {
-      setTimeout(() => {
-        entry.target.classList.add('revealed');
-      }, index * 150);
-    }
-  });
-}, observerOptions);
-
-// Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-  // Initialize colorful particles
-  new ColorfulParticles();
   
-  // Observe reveal elements
-  const revealElements = document.querySelectorAll('.reveal');
-  revealElements.forEach(el => {
-    observer.observe(el);
-  });
-  
-  // Enhanced project card interactions
-  const projectCards = document.querySelectorAll('.project-card');
-  
-  projectCards.forEach(card => {
-    card.addEventListener('mouseenter', () => {
-      // Add random color shift
-      const hue = Math.random() * 360;
-      card.style.filter = `hue-rotate(${hue * 0.1}deg)`;
-      
-      // Animate tech tags with stagger
-      const techTags = card.querySelectorAll('.tech-tag');
-      techTags.forEach((tag, index) => {
-        setTimeout(() => {
-          tag.style.transform = 'translateY(-3px) scale(1.05)';
-        }, index * 80);
-      });
-    });
+  function generateTimeRhyme(hours, minutes) {
+    const hourWords = [
+      'twelve', 'one', 'two', 'three', 'four', 'five', 'six',
+      'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+      'one', 'two', 'three', 'four', 'five', 'six',
+      'seven', 'eight', 'nine', 'ten', 'eleven'
+    ];
     
-    card.addEventListener('mouseleave', () => {
-      card.style.filter = '';
-      
-      const techTags = card.querySelectorAll('.tech-tag');
-      techTags.forEach(tag => {
-        tag.style.transform = '';
-      });
-    });
-  });
-  
-  // Smooth scrolling with easing
-  document.querySelectorAll('a[href^="#"]').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const targetId = link.getAttribute('href');
-      const targetElement = document.querySelector(targetId);
-      
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
+    const minutePhrase = minutes < 15 ? 'past' : minutes < 45 ? 'past' : 'to';
+    const displayHour = hours > 12 ? hours - 12 : hours === 0 ? 12 : hours;
+    const hourWord = hourWords[displayHour];
+    
+    // Simple rhyme patterns based on time
+    const rhymes = [
+      {
+        line1: `The clock strikes ${hourWord} with morning's gleam,`,
+        line2: `As time flows by like a gentle stream.`
+      },
+      {
+        line1: `At ${hourWord} o'clock the world turns bright,`,
+        line2: `Each moment dancing in the light.`
+      },
+      {
+        line1: `Time whispers softly, '${hourWord}' it says,`,
+        line2: `As peaceful moments gently spread.`
       }
-    });
-  });
-  
-  // Add color cycling to rainbow text
-  const rainbowText = document.querySelector('.rainbow-text');
-  if (rainbowText) {
-    setInterval(() => {
-      const hue = (Date.now() / 50) % 360;
-      rainbowText.style.filter = `hue-rotate(${hue}deg)`;
-    }, 100);
+    ];
+    
+    return rhymes[Math.floor(Math.random() * rhymes.length)];
   }
-});
+  
+  // Initialize and update every minute
+  document.addEventListener('DOMContentLoaded', function() {
+    updateRhymingClock();
+    setInterval(updateRhymingClock, 60000);
+  });
 </script>
