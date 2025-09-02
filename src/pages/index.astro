@@ -1,98 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import Projects from '../components/Projects.astro';
+import About from '../components/About.astro';
+import Contact from '../components/Contact.astro';
 ---
 
 <Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer">
   <main>
-    <!-- Minimal Clock Widget -->
-    <div class="clock-widget">
-      <span id="current-time"></span>
-    </div>
-
-    <!-- Colorful Animated Hero Section -->
-    <section class="hero-section" id="home">
-      <div class="floating-particles" id="particles"></div>
-      <div class="color-orbs">
-        <div class="orb orb-1"></div>
-        <div class="orb orb-2"></div>
-        <div class="orb orb-3"></div>
-        <div class="orb orb-4"></div>
-      </div>
-      
-      <div class="hero-content">
-        <h1 class="hero-title rainbow-text">Ariff Mohamed</h1>
-        <p class="hero-subtitle typing-animation">Cloud Solutions Engineer | Security Specialist</p>
-        <p class="hero-description fade-in-delayed">
-          Transforming enterprise cloud infrastructure with security-first Azure architecture and innovative automation solutions. Currently advancing cybersecurity expertise at MIT.
-        </p>
-        
-        <div class="hero-buttons">
-          <a class="btn-primary pulse-animation" href="#projects">
-          View Projects
-          <svg class="arrow-icon" height="18" viewBox="0 0 24 24" width="18">
-            <path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" fill="currentColor"></path>
-          </svg>
-        </a>
-        <a class="btn-secondary slide-animation" href="#contact">Get in Touch</a>
-      </div>
-      
-      <div class="hero-visual">
-        <div class="floating-icon azure-icon">☁️</div>
-        <div class="floating-icon security-icon">🔒</div>
-        <div class="floating-icon code-icon">💻</div>
-      </div>
-    </section>
+    <!-- Hero Section -->
+    <Hero />
+    
+    <!-- About Section -->
+    <About />
+    
+    <!-- Projects Section -->
+    <Projects />
+    
+    <!-- Contact Section -->
+    <Contact />
   </main>
 </Layout>
-
-<style>
-  .clock-widget {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-family: 'Courier New', monospace;
-    font-size: 14px;
-    color: #fff;
-    z-index: 1000;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-  }
-
-  .clock-widget:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-1px);
-  }
-
-  @media (max-width: 768px) {
-    .clock-widget {
-      top: 10px;
-      right: 10px;
-      font-size: 12px;
-      padding: 6px 10px;
-    }
-  }
-</style>
-
-<script>
-  function updateClock() {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString('en-US', {
-      hour12: false,
-      hour: '2-digit',
-      minute: '2-digit'
-    });
-    const clockElement = document.getElementById('current-time');
-    if (clockElement) {
-      clockElement.textContent = timeString;
-    }
-  }
-
-  // Update clock immediately and then every second
-  updateClock();
-  setInterval(updateClock, 1000);
-</script>
