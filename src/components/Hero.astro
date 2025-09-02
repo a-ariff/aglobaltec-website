@@ -8,17 +8,21 @@
       <h1 class="hero-title">
         Hi, I'm <span class="accent">Ariff</span>
       </h1>
+      
       <h2 class="hero-subtitle">
         Cloud Solutions Engineer | Azure Security Specialist
       </h2>
+      
       <p class="hero-description">
         I specialize in cloud security architecture and Azure solutions, with expertise in Microsoft Intune, 
         cybersecurity frameworks, and enterprise security policies. Currently pursuing Master's in Cybersecurity 
         at Whitecliffe College while working as a Cloud Solutions Engineer at Theta.
       </p>
+      
       <div class="hero-cta">
-        <a href="#contact" class="btn btn-primary">Get In Touch</a>
-        <a href="#projects" class="btn btn-secondary">View My Work</a>
+        <a class="btn btn-primary" href="#contact">Get In Touch</a>
+        
+        <a class="btn btn-secondary" href="#projects">View My Work</a>
       </div>
     </div>
   </div>
@@ -32,44 +36,44 @@
     padding: 4rem 0;
     background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.05) 0%, transparent 50%);
   }
-
+  
   .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
     text-align: center;
   }
-
+  
   .hero-content {
     max-width: 800px;
     margin: 0 auto;
   }
-
+  
   .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
   }
-
+  
   .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
-
+  
   .hero-description {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 2.5rem;
+    margin-bottom: 3rem;
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
   }
-
+  
   .accent {
     color: var(--accent-color);
     background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary, var(--accent-color)));
@@ -77,84 +81,103 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-
+  
   .hero-cta {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
+    margin-top: 2rem;
   }
-
+  
   .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 0.875rem 2rem;
+    padding: 1rem 2.5rem;
     border-radius: 0.5rem;
     text-decoration: none;
     font-weight: 500;
+    font-size: 1rem;
     transition: all 0.2s ease;
     border: 2px solid transparent;
+    min-width: 160px;
   }
-
+  
   .btn-primary {
     background: var(--accent-color);
     color: white;
+    margin-right: 0.5rem;
   }
-
+  
   .btn-primary:hover {
     background: var(--accent-dark, var(--accent-color));
     transform: translateY(-2px);
   }
-
+  
   .btn-secondary {
     background: transparent;
     color: var(--accent-color);
     border-color: var(--accent-color);
+    margin-left: 0.5rem;
   }
-
+  
   .btn-secondary:hover {
     background: var(--accent-color);
     color: white;
     transform: translateY(-2px);
   }
-
+  
   @media (max-width: 768px) {
     .hero {
       min-height: 70vh;
       padding: 2rem 0;
     }
-
+    
     .hero-title {
       font-size: 2.5rem;
     }
-
+    
     .hero-subtitle {
       font-size: 1.25rem;
     }
-
+    
     .hero-description {
       font-size: 1rem;
     }
-
+    
+    .hero-cta {
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
     .btn {
-      padding: 0.75rem 1.5rem;
+      padding: 0.875rem 2rem;
+      min-width: 140px;
     }
   }
-
+  
   @media (max-width: 480px) {
     .hero-title {
       font-size: 2rem;
     }
-
+    
     .hero-cta {
       flex-direction: column;
       align-items: center;
+      gap: 1rem;
     }
-
+    
     .btn {
       width: 100%;
       max-width: 280px;
+      margin: 0;
+    }
+    
+    .btn-primary,
+    .btn-secondary {
+      margin: 0;
     }
   }
 </style>
