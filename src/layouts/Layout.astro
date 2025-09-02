@@ -14,259 +14,68 @@ const {
 } = Astro.props;
 const imageUrl = new URL(image, Astro.site);
 ---
+
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8"/>
-    <meta content="{description}" name="description"/>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-    <link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
-    <meta content="{Astro.generator}" name="generator"/>
+    <meta charset="utf-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect"/>
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
     
     <!-- Canonical URL -->
-    <link href="{canonicalURL}" rel="canonical"/>
+    <link rel="canonical" href={canonicalURL} />
     
     <!-- Open Graph / Facebook -->
-    <meta content="website" property="og:type"/>
-    <meta content="{url}" property="og:url"/>
-    <meta content="{title}" property="og:title"/>
-    <meta content="{description}" property="og:description"/>
-    <meta content="{imageUrl}" property="og:image"/>
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={imageUrl} />
     
     <!-- Twitter -->
-    <meta content="summary_large_image" property="twitter:card"/>
-    <meta content="{url}" property="twitter:url"/>
-    <meta content="{title}" property="twitter:title"/>
-    <meta content="{description}" property="twitter:description"/>
-    <meta content="{imageUrl}" property="twitter:image"/>
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={url} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={imageUrl} />
     
-    <!-- Critical CSS -->
+    <!-- Essential Layout Styles Only -->
     <style>
-      /* CSS Variables for Dark Theme */
-      :root {
-        --bg-primary: #0f0f23;
-        --bg-secondary: #1a1a2e;
-        --bg-card: #16213e;
-        --text-primary: #ffffff;
-        --text-secondary: #b8b8d1;
-        --text-muted: #8b8ba7;
-        --accent-primary: #4f46e5;
-        --accent-secondary: #7c3aed;
-        --accent-tertiary: #06b6d4;
-        --border-color: #2d3748;
-        --hover-bg: rgba(255, 255, 255, 0.05);
-        --transition: all 0.3s ease;
-        --shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-        --gradient: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
-        --font-family: 'Inter', system-ui, -apple-system, sans-serif;
-      }
-      /* Base Styles */
+      /* Basic reset and typography */
       * {
         box-sizing: border-box;
         margin: 0;
         padding: 0;
       }
+      
       html {
         scroll-behavior: smooth;
       }
+      
       body {
-        font-family: var(--font-family);
-        background: var(--bg-primary);
-        color: var(--text-primary);
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
         line-height: 1.6;
         overflow-x: hidden;
       }
-      /* Container */
+      
+      /* Essential layout container */
       .container {
         max-width: 1200px;
         margin: 0 auto;
         padding: 0 1.5rem;
       }
-      /* Grid Layouts */
-      .grid {
-        display: grid;
-        gap: 2rem;
-      }
-      .grid-2 {
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      }
-      .grid-3 {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      }
-      .grid-4 {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      }
-      /* Card Styles */
-      .card {
-        background: var(--bg-card);
-        border-radius: 1rem;
-        padding: 2rem;
-        border: 1px solid var(--border-color);
-        transition: var(--transition);
-        box-shadow: var(--shadow);
-      }
-      .card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        border-color: var(--accent-primary);
-      }
-      .card-header {
-        margin-bottom: 1.5rem;
-      }
-      .card-title {
-        font-size: 1.5rem;
-        font-weight: 600;
-        color: var(--text-primary);
-        margin-bottom: 0.5rem;
-      }
-      .card-description {
-        color: var(--text-secondary);
-        line-height: 1.6;
-      }
-      /* Button Styles */
-      .btn {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 1.5rem;
-        border-radius: 0.5rem;
-        font-weight: 500;
-        text-decoration: none;
-        transition: var(--transition);
-        cursor: pointer;
-        border: none;
-        font-family: inherit;
-      }
-      .btn-primary {
-        background: var(--gradient);
-        color: white;
-        box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
-      }
-      .btn-primary:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(79, 70, 229, 0.4);
-      }
-      .btn-secondary {
-        background: transparent;
-        color: var(--text-primary);
-        border: 1px solid var(--border-color);
-      }
-      .btn-secondary:hover {
-        background: var(--hover-bg);
-        border-color: var(--accent-primary);
-      }
-      /* Navigation */
-      .sticky-nav {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        width: 100%;
-        transition: var(--transition);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-      }
-      .nav-transparent {
-        background: rgba(15, 15, 35, 0.8);
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-      }
-      .nav-solid {
-        background: rgba(15, 15, 35, 0.95);
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: var(--shadow);
-      }
-      .nav-content {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 0;
-      }
-      .nav-logo {
-        display: flex;
-        align-items: center;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: var(--text-primary);
-        text-decoration: none;
-        transition: var(--transition);
-      }
-      .nav-logo:hover {
-        color: var(--accent-primary);
-      }
-      .nav-links {
-        display: flex;
-        list-style: none;
-        gap: 2rem;
-        align-items: center;
-      }
-      .nav-link {
-        color: var(--text-secondary);
-        text-decoration: none;
-        font-weight: 500;
-        padding: 0.5rem 1rem;
-        border-radius: 0.5rem;
-        transition: var(--transition);
-      }
-      .nav-link:hover {
-        color: var(--text-primary);
-        background: var(--hover-bg);
-      }
-      /* Utility Classes */
-      .flex {
-        display: flex;
-      }
-      .flex-col {
-        flex-direction: column;
-      }
-      .items-center {
-        align-items: center;
-      }
-      .justify-center {
-        justify-content: center;
-      }
-      .justify-between {
-        justify-content: space-between;
-      }
-      .text-center {
-        text-align: center;
-      }
-      .mb-4 {
-        margin-bottom: 1rem;
-      }
-      .mb-8 {
-        margin-bottom: 2rem;
-      }
-      .mt-8 {
-        margin-top: 2rem;
-      }
-      .py-8 {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-      }
-      .py-16 {
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-      /* Responsive Design */
+      
+      /* Basic responsive adjustments */
       @media (max-width: 768px) {
         .container {
           padding: 0 1rem;
-        }
-        .nav-links {
-          display: none;
-        }
-        .grid {
-          gap: 1rem;
-        }
-        .card {
-          padding: 1.5rem;
-        }
-        .py-16 {
-          padding-top: 2rem;
-          padding-bottom: 2rem;
         }
       }
     </style>
@@ -274,7 +83,6 @@ const imageUrl = new URL(image, Astro.site);
     <title>{title}</title>
   </head>
   <body>
-  
     <!-- Sticky Top Navigation -->
     <nav class="sticky-nav nav-transparent" id="main-nav">
       <div class="container">
@@ -288,8 +96,8 @@ const imageUrl = new URL(image, Astro.site);
             <li><a class="nav-link" href="/#projects">Projects</a></li>
             <li><a class="nav-link" href="/#about">About</a></li>
             <li><a class="nav-link" href="/#contact">Contact</a></li>
-            <li><a class="nav-link" href="https://github.com/a-ariff" rel="noopener noreferrer" target="_blank">GitHub</a></li>
-            <li><a class="nav-link" href="https://www.linkedin.com/in/ariff-mohamed/" rel="noopener noreferrer" target="_blank">LinkedIn</a></li>
+            <li><a class="nav-link" href="https://github.com/a-ariff" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+            <li><a class="nav-link" href="https://www.linkedin.com/in/ariff-mohamed/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
           </ul>
         </div>
       </div>
