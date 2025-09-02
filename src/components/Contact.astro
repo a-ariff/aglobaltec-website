@@ -13,7 +13,7 @@ import LinkedInBadge from './LinkedInBadge.astro';
     <div class="contact-content">
       <div class="contact-info">
         <div class="contact-intro">
-          Get In Touch
+          <h3>Get In Touch</h3>
           <p>
             I'm always excited to work on new projects and collaborate with amazing people. 
             Whether you have a cloud security challenge or want to discuss Azure solutions, 
@@ -29,18 +29,15 @@ import LinkedInBadge from './LinkedInBadge.astro';
               </svg>
             </div>
             <div class="contact-details email-spacing">
-              Primary Email
-              <a class="contact-info" href="mailto:17c76e50">contact@aglobaltec.com</a>
-              For new projects, collaborations, and cloud security inquiries
+              <h4>Primary Email</h4>
+              <a class="contact-info" href="mailto:contact@aglobaltec.com">contact@aglobaltec.com</a>
+              <p>For new projects, collaborations, and cloud security inquiries</p>
             </div>
           </div>
           
           <div class="contact-item">
             <LinkedInBadge 
-              profileId="ariff-mohamed" 
-              size="large" 
-              theme="dark" 
-              type="horizontal" 
+              profileUrl="https://nz.linkedin.com/in/ariff-mohamed" 
             />
           </div>
         </div>
@@ -48,3 +45,113 @@ import LinkedInBadge from './LinkedInBadge.astro';
     </div>
   </div>
 </section>
+
+<style>
+.contact {
+  padding: 4rem 0;
+  background: var(--bg-secondary);
+}
+
+.contact-content {
+  margin-top: 2rem;
+}
+
+.contact-info {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-intro h3 {
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+}
+
+.contact-intro p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.contact-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--accent-color);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon svg {
+  color: white;
+}
+
+.contact-details h4 {
+  font-size: 1.1rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.contact-details .contact-info {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.contact-details .contact-info:hover {
+  text-decoration: underline;
+}
+
+.contact-details p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.email-spacing {
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .contact {
+    padding: 3rem 0;
+  }
+  
+  .contact-item {
+    padding: 1rem;
+  }
+  
+  .contact-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+</style>
