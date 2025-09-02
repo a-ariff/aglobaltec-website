@@ -1,8 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
+// Forcing rebuild - Sept 2, 2025
 ---
-
-<style>
 .rainbow-name {
   background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57, #ff9ff3, #54a0ff);
   background-size: 200% 200%;
@@ -11,7 +10,6 @@ import Layout from '../layouts/Layout.astro';
   -webkit-text-fill-color: transparent;
   animation: rainbow 3s ease-in-out infinite;
 }
-
 @keyframes rainbow {
   0% {
     background-position: 0% 50%;
@@ -23,7 +21,6 @@ import Layout from '../layouts/Layout.astro';
     background-position: 0% 50%;
   }
 }
-</style>
 
 <Layout title="Ariff Mohamed - Portfolio">
   <main class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
@@ -34,34 +31,6 @@ import Layout from '../layouts/Layout.astro';
       <div class="flex justify-center space-x-4">
         <a class="btn-primary" href="#projects">View Projects</a>
         <a class="btn-secondary" href="#contact">Get In Touch</a>
-      </div>
-    </section>
-    <!-- Projects Section -->
-    <section class="projects-section py-16" id="projects">
-      <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Cloud Infrastructure -->
-          <div class="project-card">
-            <div class="project-icon">☁️</div>
-            <h3 class="project-title">Cloud Infrastructure</h3>
-            <p class="project-description">Scalable Azure cloud solutions and infrastructure automation</p>
-          </div>
-          
-          <!-- Data Analytics -->
-          <div class="project-card">
-            <div class="project-icon">📊</div>
-            <h3 class="project-title">Data Analytics</h3>
-            <p class="project-description">Business intelligence and data visualization platforms</p>
-          </div>
-          
-          <!-- Security Solutions -->
-          <div class="project-card">
-            <div class="project-icon">🔒</div>
-            <h3 class="project-title">Security Solutions</h3>
-            <p class="project-description">Enterprise security implementations and compliance frameworks</p>
-          </div>
-        </div>
       </div>
     </section>
   </main>
