@@ -1,7 +1,10 @@
 ---
 // Contact component script
+import LinkedInBadge from './LinkedInBadge.astro';
 ---
-<section class="contact" id="contact">  <div class="container">
+
+<section class="contact" id="contact">
+  <div class="container">
     <div class="section-header">
       <h2 class="section-title">Let's Work Together</h2>
       <p class="section-subtitle">Ready to bring your cloud solutions to life? Get in touch and let's create something amazing.</p>
@@ -21,15 +24,24 @@
         <div class="contact-methods">
           <div class="contact-item">
             <div class="contact-icon">
-              <svg fill="currentColor" height="24" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+              <svg fill="currentColor" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
                 <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
               </svg>
             </div>
             <div class="contact-details email-spacing">
               Primary Email
-              <a href="mailto:17c76e50" class="contact-info">contact@aglobaltec.com</a>
+              <a class="contact-info" href="mailto:17c76e50">contact@aglobaltec.com</a>
               For new projects, collaborations, and cloud security inquiries
             </div>
+          </div>
+          
+          <div class="contact-item">
+            <LinkedInBadge 
+              profileId="ariff-mohamed" 
+              size="large" 
+              theme="dark" 
+              type="horizontal" 
+            />
           </div>
         </div>
       </div>
