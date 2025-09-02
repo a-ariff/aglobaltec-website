@@ -1,4 +1,7 @@
 ---
+import SEOHead from '../components/SEOHead.astro';
+import { ViewTransitions } from 'astro:transitions';
+
 export interface Props {
   title?: string;
   description?: string;
@@ -12,39 +15,32 @@ const {
   image = '/og-image.jpg',
   url = canonicalURL
 } = Astro.props;
-const imageUrl = new URL(image, Astro.site);
 ---
 
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="description" content={description} />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+    <!-- Performance optimizations - preconnect links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+    <!-- SEO Head Component -->
+    <SEOHead 
+      title={title}
+      description={description}
+      image={image}
+      url={url}
+    />
     
-    <!-- Canonical URL -->
-    <link rel="canonical" href={canonicalURL} />
+    <!-- View Transitions API -->
+    <ViewTransitions />
     
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={url} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:image" content={imageUrl} />
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content={url} />
-    <meta property="twitter:title" content={title} />
-    <meta property="twitter:description" content={description} />
-    <meta property="twitter:image" content={imageUrl} />
+    <!-- Google Fonts with optimized loading -->
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" 
+      rel="stylesheet"
+    >
     
     <!-- Essential Layout Styles Only -->
     <style>
@@ -78,10 +74,71 @@ const imageUrl = new URL(image, Astro.site);
           padding: 0 1rem;
         }
       }
+      
+      /* Navigation styles */
+      .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        transition: all 0.3s ease;
+      }
+      
+      .nav-transparent {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+      }
+      
+      .nav-solid {
+        background: rgba(255, 255, 255, 0.98);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+      }
+      
+      .nav-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+      
+      .nav-logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-decoration: none;
+        color: #333;
+      }
+      
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+      }
+      
+      .nav-link {
+        text-decoration: none;
+        color: #666;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+      
+      .nav-link:hover {
+        color: #333;
+      }
+      
+      @media (max-width: 768px) {
+        .nav-links {
+          gap: 1rem;
+          flex-wrap: wrap;
+        }
+        
+        .nav-content {
+          flex-direction: column;
+          gap: 1rem;
+        }
+      }
     </style>
-    
-    <title>{title}</title>
   </head>
+  
   <body>
     <!-- Sticky Top Navigation -->
     <nav class="sticky-nav nav-transparent" id="main-nav">
