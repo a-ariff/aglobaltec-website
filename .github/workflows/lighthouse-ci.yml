@@ -1,0 +1,110 @@
+name: Lighthouse CI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  lighthouse-ci:
+    name: Lighthouse CI
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          submodules: recursive
+          
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+          
+      - name: Install dependencies
+        run: npm ci
+        
+      - name: Build site
+        run: npm run build
+        
+      - name: Create Lighthouse CI config
+        run: |
+          cat > lighthouserc.json << 'EOF'
+          {
+            "ci": {
+              "collect": {
+                "staticDistDir": "./dist",
+                "numberOfRuns": 3,
+                "settings": {
+                  "preset": "desktop",
+                  "throttling": {
+                    "rttMs": 40,
+                    "throughputKbps": 10240,
+                    "cpuSlowdownMultiplier": 1,
+                    "requestLatencyMs": 0,
+                    "downloadThroughputKbps": 0,
+                    "uploadThroughputKbps": 0
+                  }
+                }
+              },
+              "assert": {
+                "assertions": {
+                  "categories:performance": ["error", { "minScore": 0.9 }],
+                  "categories:accessibility": ["error", { "minScore": 0.9 }],
+                  "categories:best-practices": ["error", { "minScore": 0.9 }],
+                  "categories:seo": ["error", { "minScore": 0.9 }],
+                  "first-contentful-paint": ["error", { "maxNumericValue": 2000 }],
+                  "largest-contentful-paint": ["error", { "maxNumericValue": 2500 }],
+                  "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }],
+                  "total-blocking-time": ["error", { "maxNumericValue": 300 }],
+                  "speed-index": ["error", { "maxNumericValue": 3000 }]
+                }
+              },
+              "upload": {
+                "target": "temporary-public-storage"
+              }
+            }
+          }
+          EOF
+          
+      - name: Run Lighthouse CI
+        uses: treosh/lighthouse-ci-action@v10
+        with:
+          configPath: './lighthouserc.json'
+          temporaryPublicStorage: true
+          uploadArtifacts: true
+          
+      - name: Upload Lighthouse results as artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: lighthouse-results-${{ github.run_number }}
+          path: |
+            .lighthouseci/
+            lighthouserc.json
+          retention-days: 30
+          
+      - name: Comment PR with Lighthouse results
+        uses: treosh/lighthouse-ci-action@v10
+        if: github.event_name == 'pull_request'
+        with:
+          configPath: './lighthouserc.json'
+          uploadArtifacts: false
+          temporaryPublicStorage: true
+          
+      - name: Fail build on performance regression
+        if: failure()
+        run: |
+          echo "❌ Lighthouse CI detected performance issues!"
+          echo "Check the Lighthouse reports for detailed information."
+          echo "Performance budgets:"
+          echo "- Performance Score: ≥90"
+          echo "- First Contentful Paint: ≤2000ms"
+          echo "- Largest Contentful Paint: ≤2500ms"
+          echo "- Cumulative Layout Shift: ≤0.1"
+          echo "- Total Blocking Time: ≤300ms"
+          echo "- Speed Index: ≤3000ms"
+          exit 1
