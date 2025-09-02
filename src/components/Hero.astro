@@ -1,44 +1,27 @@
 ---
-// Hero component script (if needed)
+// Simple Hero component
 ---
 
 <section class="hero">
   <div class="hero-container">
     <div class="hero-content">
-      <div class="hero-text">
-        <h1 class="hero-title">
-          Hi, I'm <span class="accent">Ariff</span>
-        </h1>
-        <h2 class="hero-subtitle">
-          Cloud Solutions Engineer | Azure Security Specialist
-        </h2>
-        <p class="hero-description">
-          I specialize in cloud security architecture and Azure solutions, with expertise in Microsoft Intune, 
-          cybersecurity frameworks, and enterprise security policies. Currently pursuing Master's in Cybersecurity 
-          at Whitecliffe College while working as a Cloud Solutions Engineer at Theta.
-        </p>
-        <div class="hero-cta">
-          <a class="btn btn-primary" href="#contact">Get In Touch</a>
-          <a class="btn btn-secondary" href="#projects">View My Work</a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-image">
-        <!-- Placeholder for profile image or illustration -->
-        <div class="profile-placeholder">
-          <svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="100" fill="var(--accent-color)" opacity="0.1"/>
-            <circle cx="100" cy="80" r="30" fill="var(--accent-color)" opacity="0.3"/>
-            <ellipse cx="100" cy="140" rx="45" ry="25" fill="var(--accent-color)" opacity="0.3"/>
-          </svg>
-        </div>
-      </div>
-      <div class="floating-elements">
-        <div class="floating-element element-1">☁️</div>
-        <div class="floating-element element-2">🔒</div>
-        <div class="floating-element element-3">🛡️</div>
-        <div class="floating-element element-4">⚡</div>
+      <h1 class="hero-title">
+        Hi, I'm <span class="accent">Ariff</span>
+      </h1>
+      
+      <h2 class="hero-subtitle">
+        Cloud Solutions Engineer | Azure Security Specialist
+      </h2>
+      
+      <p class="hero-description">
+        I specialize in cloud security architecture and Azure solutions, with expertise in Microsoft Intune, 
+        cybersecurity frameworks, and enterprise security policies. Currently pursuing Master's in Cybersecurity 
+        at Whitecliffe College while working as a Cloud Solutions Engineer at Theta.
+      </p>
+      
+      <div class="btn-group hero-cta">
+        <a class="btn btn-primary btn-space" href="#contact">Get In Touch</a>
+        <a class="btn btn-secondary btn-space" href="#projects">View My Work</a>
       </div>
     </div>
   </div>
@@ -46,118 +29,159 @@
 
 <style>
   .hero {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    padding: 2rem 0;
-    position: relative;
-    overflow: hidden;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, rgba(var(--accent-color-rgb), 0.05) 0%, transparent 50%);
   }
+  
   .hero-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: center;
+    text-align: center;
   }
+  
   .hero-content {
-    z-index: 2;
+    max-width: 800px;
+    margin: 0 auto;
   }
+  
   .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
     color: var(--text-color);
   }
+  
   .hero-subtitle {
     font-size: 1.5rem;
     font-weight: 500;
     color: var(--text-secondary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
+  
   .hero-description {
     font-size: 1.1rem;
     line-height: 1.6;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
-    max-width: 500px;
+    margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  
   .accent {
     color: var(--accent-color);
+    background: linear-gradient(45deg, var(--accent-color), var(--accent-secondary, var(--accent-color)));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
-  .hero-cta {
+  
+  .btn-group {
     display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
-  .hero-visual {
-    position: relative;
-    display: flex;
+    gap: 1.5rem;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
   }
-  .profile-placeholder {
-    position: relative;
-    z-index: 1;
+  
+  .hero-cta {
+    margin-top: 2rem;
   }
-  .floating-elements {
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 2.5rem;
+    border-radius: 0.5rem;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+    border: 2px solid transparent;
+    min-width: 160px;
   }
-  .floating-element {
-    position: absolute;
-    font-size: 2rem;
-    animation: float 6s ease-in-out infinite;
+  
+  .btn-space {
+    margin: 0.25rem;
   }
-  .element-1 {
-    top: 20%;
-    left: 10%;
-    animation-delay: -1s;
+  
+  .btn-primary {
+    background: var(--accent-color);
+    color: white;
   }
-  .element-2 {
-    top: 10%;
-    right: 20%;
-    animation-delay: -3s;
+  
+  .btn-primary:hover {
+    background: var(--accent-dark, var(--accent-color));
+    transform: translateY(-2px);
   }
-  .element-3 {
-    bottom: 30%;
-    left: 20%;
-    animation-delay: -2s;
+  
+  .btn-secondary {
+    background: transparent;
+    color: var(--accent-color);
+    border-color: var(--accent-color);
   }
-  .element-4 {
-    bottom: 20%;
-    right: 10%;
-    animation-delay: -4s;
+  
+  .btn-secondary:hover {
+    background: var(--accent-color);
+    color: white;
+    transform: translateY(-2px);
   }
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
+  
   @media (max-width: 768px) {
-    .hero-container {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-      text-align: center;
+    .hero {
+      min-height: 70vh;
+      padding: 2rem 0;
     }
+    
     .hero-title {
       font-size: 2.5rem;
     }
+    
     .hero-subtitle {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
     }
-    .hero-cta {
-      justify-content: center;
+    
+    .hero-description {
+      font-size: 1rem;
     }
-    .floating-element {
-      display: none;
+    
+    .btn-group {
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    
+    .btn {
+      padding: 0.875rem 2rem;
+      min-width: 140px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-title {
+      font-size: 2rem;
+    }
+    
+    .btn-group {
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .btn {
+      width: 100%;
+      max-width: 280px;
+      margin: 0;
+    }
+    
+    .btn-space {
+      margin: 0;
     }
   }
 </style>

@@ -1,64 +1,55 @@
 ---
-// Real cybersecurity projects component
+// Projects component - Clean and simplified layout
 ---
 
-<section class="projects-section">
+<section class="projects section-spacing">
   <div class="container">
     <h2>Featured Projects</h2>
-    <p class="section-subtitle">Enterprise security automation and cloud infrastructure solutions</p>
+    <p class="subtitle">Enterprise security automation and cloud infrastructure solutions</p>
     
-    <div class="projects-grid">
-      <!-- Browser Popup MDM Automation -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Browser Popup MDM Automation</h3>
-        </div>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Browser Popup MDM Automation</h3>
         <p>Comprehensive cross-platform policy templates and automation scripts for browser management on Windows and macOS endpoints with Microsoft Intune integration.</p>
-        <div class="tech-stack">
-          <span>PowerShell</span>
-          <span>JSON</span>
-          <span>PLIST</span>
-          <span>Intune</span>
+        <div class="tech-tags">
+          <span class="tech-tag">PowerShell</span>
+          <span class="tech-tag">JSON</span>
+          <span class="tech-tag">PLIST</span>
+          <span class="tech-tag">Intune</span>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/a-ariff/aglobaltec-website" target="_blank">Code</a>
-          <a href="https://guides.aglobaltec.com/popup-policy-guide" target="_blank">Guide</a>
+        <div class="btn-group">
+          <a href="https://github.com/a-ariff/aglobaltec-website" class="btn btn-primary" target="_blank">Code</a>
+          <a href="https://guides.aglobaltec.com/popup-policy-guide" class="btn btn-secondary" target="_blank">Guide</a>
         </div>
       </div>
-
-      <!-- Intune Remediation Scripts -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Intune Remediation Scripts</h3>
-        </div>
+      
+      <div class="card">
+        <h3>Intune Remediation Scripts</h3>
         <p>Production-ready PowerShell scripts for Microsoft Intune proactive remediations covering compliance, security, and performance optimization.</p>
-        <div class="tech-stack">
-          <span>PowerShell</span>
-          <span>Microsoft Graph</span>
-          <span>Azure</span>
-          <span>Intune</span>
+        <div class="tech-tags">
+          <span class="tech-tag">PowerShell</span>
+          <span class="tech-tag">Microsoft Graph</span>
+          <span class="tech-tag">Azure</span>
+          <span class="tech-tag">Intune</span>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/a-ariff/intune-remediation-scripts" target="_blank">Code</a>
-          <a href="https://github.com/a-ariff/intune-remediation-scripts#readme" target="_blank">Docs</a>
+        <div class="btn-group">
+          <a href="https://github.com/a-ariff/cda3a49a" class="btn btn-primary" target="_blank">Code</a>
+          <a href="https://github.com/a-ariff/cda3a49a#readme" class="btn btn-secondary" target="_blank">Docs</a>
         </div>
       </div>
-
-      <!-- Azure Landing Zone Bicep -->
-      <div class="project-card">
-        <div class="project-header">
-          <h3>Azure Landing Zone</h3>
-        </div>
+      
+      <div class="card">
+        <h3>Azure Landing Zone</h3>
         <p>Enterprise-scale Azure landing zone implementation using Bicep templates with security baselines, governance policies, and compliance frameworks.</p>
-        <div class="tech-stack">
-          <span>Bicep</span>
-          <span>Azure</span>
-          <span>ARM</span>
-          <span>DevOps</span>
+        <div class="tech-tags">
+          <span class="tech-tag">Bicep</span>
+          <span class="tech-tag">Azure</span>
+          <span class="tech-tag">ARM</span>
+          <span class="tech-tag">DevOps</span>
         </div>
-        <div class="project-links">
-          <a href="#" target="_blank">Code</a>
-          <a href="https://docs.microsoft.com/azure/cloud-adoption-framework/" target="_blank">Framework</a>
+        <div class="btn-group">
+          <a href="#" class="btn btn-primary" target="_blank">Code</a>
+          <a href="https://docs.microsoft.com/azure/ebd0b36e/" class="btn btn-secondary" target="_blank">Framework</a>
         </div>
       </div>
     </div>
@@ -66,25 +57,12 @@
 </section>
 
 <style>
-  .projects-section {
-    padding: 4rem 0;
+  /* Component-specific styles that complement global CSS */
+  .projects {
     background: var(--bg-secondary);
   }
   
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
-  }
-  
-  .projects-section h2 {
-    text-align: center;
-    margin-bottom: 1rem;
-    font-size: 2.5rem;
-    color: var(--text-primary);
-  }
-  
-  .section-subtitle {
+  .subtitle {
     text-align: center;
     margin-bottom: 3rem;
     color: var(--text-secondary);
@@ -94,86 +72,18 @@
     margin-right: auto;
   }
   
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 2rem;
-    margin-top: 2rem;
-  }
-  
-  .project-card {
-    background: var(--bg-primary);
-    border-radius: 12px;
-    padding: 2rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid var(--border-color);
-  }
-  
-  .project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  }
-  
-  .project-header h3 {
+  /* Minor adjustments to global card styles for projects */
+  .card h3 {
     color: var(--accent-color);
     margin-bottom: 1rem;
-    font-size: 1.5rem;
   }
   
-  .project-card p {
-    color: var(--text-secondary);
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+  /* Ensure proper spacing between content elements in cards */
+  .card .tech-tags {
+    margin-top: 1.5rem;
   }
   
-  .tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .tech-stack span {
-    background: var(--accent-color);
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-  
-  .project-links {
-    display: flex;
-    gap: 1rem;
-  }
-  
-  .project-links a {
-    padding: 0.6rem 1.2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    border: 2px solid var(--accent-color);
-  }
-  
-  .project-links a:first-child {
-    background: var(--accent-color);
-    color: white;
-  }
-  
-  .project-links a:first-child:hover {
-    background: transparent;
-    color: var(--accent-color);
-  }
-  
-  .project-links a:last-child {
-    background: transparent;
-    color: var(--accent-color);
-  }
-  
-  .project-links a:last-child:hover {
-    background: var(--accent-color);
-    color: white;
+  .card .btn-group {
+    margin-top: 1.5rem;
   }
 </style>
