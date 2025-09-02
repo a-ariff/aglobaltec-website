@@ -4,6 +4,11 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer">
   <main>
+    <!-- Minimal Clock Widget -->
+    <div class="clock-widget">
+      <span id="current-time"></span>
+    </div>
+
     <!-- Colorful Animated Hero Section -->
     <section class="hero-section" id="home">
       <div class="floating-particles" id="particles"></div>
@@ -34,126 +39,60 @@ import Layout from '../layouts/Layout.astro';
       <div class="hero-visual">
         <div class="floating-icon azure-icon">☁️</div>
         <div class="floating-icon security-icon">🔒</div>
-        <div class="floating-icon automation-icon">⚙️</div>
-      </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="about-section" id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-grid">
-          <div class="about-text">
-            <p>
-              I'm a passionate Cloud Solutions Engineer with extensive experience in Azure cloud infrastructure and cybersecurity. Currently pursuing advanced cybersecurity certifications at MIT, I specialize in designing secure, scalable cloud architectures for enterprise environments.
-            </p>
-            <p>
-              My expertise spans from implementing zero-trust security models to automating complex cloud deployment processes. I believe in the power of technology to transform businesses while maintaining the highest security standards.
-            </p>
-          </div>
-          <div class="about-skills">
-            <div class="skill-category">
-              <h3>Cloud Platforms</h3>
-              <ul>
-                <li>Microsoft Azure</li>
-                <li>Azure DevOps</li>
-                <li>Azure Security Center</li>
-              </ul>
-            </div>
-            <div class="skill-category">
-              <h3>Security</h3>
-              <ul>
-                <li>Zero Trust Architecture</li>
-                <li>Identity & Access Management</li>
-                <li>Vulnerability Assessment</li>
-              </ul>
-            </div>
-            <div class="skill-category">
-              <h3>Automation</h3>
-              <ul>
-                <li>Infrastructure as Code</li>
-                <li>CI/CD Pipelines</li>
-                <li>PowerShell & Python</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="projects-section" id="projects">
-      <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
-        <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Enterprise Azure Migration</h3>
-              <span class="project-tag">Cloud Architecture</span>
-            </div>
-            <p class="project-description">
-              Led the migration of a Fortune 500 company's entire infrastructure to Azure, implementing security best practices and achieving 99.9% uptime.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Azure</span>
-              <span class="tech-tag">Security Center</span>
-              <span class="tech-tag">DevOps</span>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Zero Trust Implementation</h3>
-              <span class="project-tag">Security</span>
-            </div>
-            <p class="project-description">
-              Designed and implemented a comprehensive zero-trust security model for a multinational corporation, reducing security incidents by 75%.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Azure AD</span>
-              <span class="tech-tag">Conditional Access</span>
-              <span class="tech-tag">MFA</span>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Automated Compliance Pipeline</h3>
-              <span class="project-tag">Automation</span>
-            </div>
-            <p class="project-description">
-              Built an automated compliance monitoring and remediation system using Azure Policy and PowerShell, ensuring continuous regulatory compliance.
-            </p>
-            <div class="project-tech">
-              <span class="tech-tag">Azure Policy</span>
-              <span class="tech-tag">PowerShell</span>
-              <span class="tech-tag">Logic Apps</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact-section" id="contact">
-      <div class="container">
-        <h2 class="section-title">Get in Touch</h2>
-        <div class="contact-content">
-          <div class="contact-info">
-            <p>Ready to discuss your cloud security needs? Let's connect and explore how we can transform your infrastructure.</p>
-            <div class="contact-links">
-              <a href="mailto:ariff@aglobaltec.com" class="contact-link">
-                <span class="contact-icon">📧</span>
-                ariff@aglobaltec.com
-              </a>
-              <a href="https://linkedin.com/in/ariff-mohamed" class="contact-link">
-                <span class="contact-icon">💼</span>
-                LinkedIn Profile
-              </a>
-            </div>
-          </div>
-        </div>
+        <div class="floating-icon code-icon">💻</div>
       </div>
     </section>
   </main>
 </Layout>
+
+<style>
+  .clock-widget {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #fff;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+
+  .clock-widget:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-1px);
+  }
+
+  @media (max-width: 768px) {
+    .clock-widget {
+      top: 10px;
+      right: 10px;
+      font-size: 12px;
+      padding: 6px 10px;
+    }
+  }
+</style>
+
+<script>
+  function updateClock() {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString('en-US', {
+      hour12: false,
+      hour: '2-digit',
+      minute: '2-digit'
+    });
+    const clockElement = document.getElementById('current-time');
+    if (clockElement) {
+      clockElement.textContent = timeString;
+    }
+  }
+
+  // Update clock immediately and then every second
+  updateClock();
+  setInterval(updateClock, 1000);
+</script>
