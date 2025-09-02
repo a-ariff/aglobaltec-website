@@ -1,23 +1,215 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Projects from '../components/Projects.astro';
-import About from '../components/About.astro';
-import Contact from '../components/Contact.astro';
 ---
 
-<Layout title="Ariff Mohamed - Azure Cloud Solutions Engineer">
-  <main>
+<Layout title="Ariff Mohamed - Portfolio">
+  <main class="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
     <!-- Hero Section -->
-    <Hero />
-    
-    <!-- About Section -->
-    <About />
-    
+    <section class="hero-section py-20 text-center">
+      <h1 class="rainbow-gradient text-6xl font-bold mb-6">Ariff Mohamed</h1>
+      <p class="text-xl text-gray-600 mb-8">Azure Cloud Solutions Engineer & Full-Stack Developer</p>
+      <div class="flex justify-center space-x-4">
+        <a href="#projects" class="btn-primary">View Projects</a>
+        <a href="#contact" class="btn-secondary">Get In Touch</a>
+      </div>
+    </section>
+
     <!-- Projects Section -->
-    <Projects />
-    
+    <section id="projects" class="projects-section py-16">
+      <div class="container mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Cloud Infrastructure -->
+          <div class="project-card">
+            <div class="project-icon">☁️</div>
+            <h3 class="project-title">Cloud Infrastructure</h3>
+            <p class="project-description">Scalable Azure cloud solutions and infrastructure automation</p>
+          </div>
+          
+          <!-- Data Analytics -->
+          <div class="project-card">
+            <div class="project-icon">📊</div>
+            <h3 class="project-title">Data Analytics</h3>
+            <p class="project-description">Business intelligence and data visualization platforms</p>
+          </div>
+          
+          <!-- Security Solutions -->
+          <div class="project-card">
+            <div class="project-icon">🔒</div>
+            <h3 class="project-title">Security Solutions</h3>
+            <p class="project-description">Enterprise security and compliance frameworks</p>
+          </div>
+          
+          <!-- Mobile Apps -->
+          <div class="project-card">
+            <div class="project-icon">📱</div>
+            <h3 class="project-title">Mobile Applications</h3>
+            <p class="project-description">Cross-platform mobile app development</p>
+          </div>
+          
+          <!-- Web Development -->
+          <div class="project-card">
+            <div class="project-icon">🌐</div>
+            <h3 class="project-title">Web Development</h3>
+            <p class="project-description">Modern web applications and responsive design</p>
+          </div>
+          
+          <!-- Performance Optimization -->
+          <div class="project-card">
+            <div class="project-icon">⚡</div>
+            <h3 class="project-title">Performance Optimization</h3>
+            <p class="project-description">System performance tuning and optimization</p>
+          </div>
+          
+          <!-- Quality Assurance -->
+          <div class="project-card">
+            <div class="project-icon">✅</div>
+            <h3 class="project-title">Quality Assurance</h3>
+            <p class="project-description">Automated testing and quality control systems</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact Section -->
-    <Contact />
+    <section id="contact" class="contact-section py-16 bg-white">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-4xl font-bold mb-8">Let's Connect</h2>
+        <p class="text-xl text-gray-600 mb-8">Ready to bring your ideas to life? Let's discuss your next project.</p>
+        <div class="flex justify-center space-x-6">
+          <a href="mailto:ariff@aglobaltec.com" class="contact-link">📧 Email</a>
+          <a href="https://linkedin.com/in/ariffmohamed" class="contact-link">💼 LinkedIn</a>
+          <a href="https://github.com/a-ariff" class="contact-link">🔗 GitHub</a>
+        </div>
+      </div>
+    </section>
   </main>
 </Layout>
+
+<style>
+  .rainbow-gradient {
+    background: linear-gradient(
+      45deg,
+      #ff6b6b,
+      #4ecdc4,
+      #45b7d1,
+      #96ceb4,
+      #feca57,
+      #ff9ff3,
+      #54a0ff
+    );
+    background-size: 400% 400%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease-in-out infinite;
+  }
+
+  @keyframes gradientShift {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .container {
+    max-width: 1200px;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+  }
+
+  .btn-secondary {
+    border: 2px solid #667eea;
+    color: #667eea;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+  }
+
+  .project-card {
+    background: white;
+    padding: 24px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #e5e7eb;
+  }
+
+  .project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 25px rgba(0, 0, 0, 0.15);
+  }
+
+  .project-icon {
+    font-size: 3rem;
+    margin-bottom: 16px;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #1f2937;
+  }
+
+  .project-description {
+    color: #6b7280;
+    line-height: 1.6;
+  }
+
+  .contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 20px;
+    background: #f3f4f6;
+    color: #374151;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .contact-link:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+  }
+
+  .hero-section {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 400% 400%;
+    animation: gradientAnimation 8s ease infinite;
+    color: white;
+  }
+
+  @keyframes gradientAnimation {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+</style>
