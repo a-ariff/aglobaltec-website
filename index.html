@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AGL Group - Advanced 3D Technology Solutions">
+    <meta name="keywords" content="3D technology, React, Three.js, web development, AGL Group">
+    <meta name="author" content="AGL Group">
+    <meta property="og:title" content="AGL Group - Advanced 3D Technology">
+    <meta property="og:description" content="Experience cutting-edge 3D technology solutions with React and Three.js">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://aglobaltec.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="AGL Group - Advanced 3D Technology">
+    <meta name="twitter:description" content="Experience cutting-edge 3D technology solutions with React and Three.js">
+    <title>AGL Group - Advanced 3D Technology Solutions</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+        #loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+        }
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255, 255, 255, 0.1);
+            border-top: 3px solid #00ffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        #root {
+            min-height: 100vh;
+            width: 100%;
+        }
+        .error-boundary {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            text-align: center;
+        }
+        .error-boundary h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #ff4444;
+        }
+        .error-boundary p {
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        .error-boundary button {
+            background: linear-gradient(135deg, #00ffff 0%, #0080ff 100%);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .error-boundary button:hover {
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+    <div id="loading">
+        <div class="spinner"></div>
+    </div>
+    
+    <div id="root">
+        <div class="error-boundary">
+            <h1>Loading React Application</h1>
+            <p>Please enable JavaScript to experience the full 3D interactive website.</p>
+            <button onclick="window.location.reload()">Reload Page</button>
+        </div>
+    </div>
+
+    <noscript>
+        <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #0a0a0a; display: flex; justify-content: center; align-items: center; flex-direction: column; z-index: 10000;">
+            <h1 style="color: #ff4444; font-size: 2rem; margin-bottom: 1rem;">JavaScript Required</h1>
+            <p style="color: #ffffff; font-size: 1.1rem; text-align: center; max-width: 600px; line-height: 1.6;">This website requires JavaScript to display 3D interactive content. Please enable JavaScript in your browser settings and reload the page.</p>
+        </div>
+    </noscript>
+
+    <!-- React and dependencies will be loaded here -->
+    <script type="module">
+        // Hide loading screen when React app loads
+        window.addEventListener('load', () => {
+            const loading = document.getElementById('loading');
+            if (loading) {
+                setTimeout(() => {
+                    loading.style.opacity = '0';
+                    setTimeout(() => {
+                        loading.remove();
+                    }, 500);
+                }, 1000);
+            }
+        });
+    </script>
+</body>
+</html>
