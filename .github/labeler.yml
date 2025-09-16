@@ -1,0 +1,54 @@
+# Configuration for the labeler action
+# https://github.com/actions/labeler
+
+# Dependency-related files
+dependencies:
+  - 'package*.json'
+  - 'yarn.lock'
+  - 'pnpm-lock.yaml'
+  - 'requirements*.txt'
+  - 'Pipfile*'
+  - 'composer.lock'
+  - 'Gemfile*'
+  - 'go.mod'
+  - 'go.sum'
+  - 'Cargo.toml'
+  - 'Cargo.lock'
+
+# Security-related files and directories
+security:
+  - '.github/dependabot.yml'
+  - '.github/workflows/security-*'
+  - 'security/**'
+  - '.snyk'
+  - 'SECURITY.md'
+  - '.github/workflows/*security*'
+  - '.github/workflows/*vulnerability*'
+
+# Documentation
+documentation:
+  - 'README.md'
+  - 'docs/**'
+  - '*.md'
+  - 'CHANGELOG.md'
+
+# Configuration files
+configuration:
+  - '*.config.js'
+  - '*.config.ts'
+  - '*.config.mjs'
+  - 'tsconfig.json'
+  - '.eslintrc*'
+  - '.prettierrc*'
+  - 'astro.config.mjs'
+  - '_config.yml'
+
+# GitHub Actions
+ci/cd:
+  - '.github/workflows/**'
+  - '.github/actions/**'
+
+# Source code
+src:
+  - 'src/**'
+  - 'lib/**'
