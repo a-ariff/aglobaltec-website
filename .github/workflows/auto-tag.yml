@@ -1,0 +1,253 @@
+name: Automatic Semantic Version Tagging
+
+# Trigger on pushes to main branch and manual dispatch
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (no tags created)'
+        required: false
+        default: false
+        type: boolean
+      force_version:
+        description: 'Force a specific version (e.g., 1.2.3)'
+        required: false
+        type: string
+
+jobs:
+  auto-tag:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    permissions:
+      contents: write
+      pull-requests: read
+      
+    outputs:
+      version: ${{ steps.tag.outputs.version }}
+      tag: ${{ steps.tag.outputs.tag }}
+      created: ${{ steps.tag.outputs.created }}
+      
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+      - name: Determine semantic version
+        id: tag
+        run: |
+          # Check if force_version is provided
+          if [[ -n "${{ github.event.inputs.force_version }}" ]]; then
+            NEW_VERSION="${{ github.event.inputs.force_version }}"
+            NEW_TAG="v$NEW_VERSION"
+            echo "Using forced version: $NEW_VERSION"
+          else
+            # Get the latest tag
+            LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
+            echo "Latest tag: $LATEST_TAG"
+            
+            # Extract version numbers
+            VERSION=${LATEST_TAG#v}
+            IFS='.' read -ra VERSION_PARTS <<< "$VERSION"
+            MAJOR=${VERSION_PARTS[0]:-0}
+            MINOR=${VERSION_PARTS[1]:-0}
+            PATCH=${VERSION_PARTS[2]:-0}
+            
+            echo "Current version: $MAJOR.$MINOR.$PATCH"
+            
+            # Get commits since last tag
+            if [ "$LATEST_TAG" = "v0.0.0" ]; then
+              # First time tagging - get all commits
+              COMMITS=$(git log --oneline --pretty=format:"%s" -50)
+            else
+              COMMITS=$(git log --oneline --pretty=format:"%s" $LATEST_TAG..HEAD)
+            fi
+            
+            echo "Analyzing commits:"
+            echo "$COMMITS"
+            
+            # Determine version bump based on conventional commits
+            BUMP_TYPE="none"
+            
+            # Check for breaking changes (major bump)
+            if echo "$COMMITS" | grep -E '^[a-zA-Z]+!:' > /dev/null; then
+              BUMP_TYPE="major"
+              echo "Breaking change detected -> major bump"
+            # Check for new features (minor bump)
+            elif echo "$COMMITS" | grep -E '^feat:' > /dev/null; then
+              BUMP_TYPE="minor"
+              echo "Feature detected -> minor bump"
+            # Check for fixes and other changes (patch bump)
+            elif echo "$COMMITS" | grep -E '^(fix|docs|style|refactor|test|chore|perf):' > /dev/null; then
+              BUMP_TYPE="patch"
+              echo "Fix/improvement detected -> patch bump"
+            # If no conventional commits found, default to patch if there are any commits
+            elif [ -n "$COMMITS" ]; then
+              BUMP_TYPE="patch"
+              echo "Non-conventional commits found -> patch bump"
+            else
+              echo "No new commits since last tag"
+              echo "version=" >> $GITHUB_OUTPUT
+              echo "tag=" >> $GITHUB_OUTPUT
+              echo "created=false" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+            
+            # Calculate new version
+            case $BUMP_TYPE in
+              major)
+                MAJOR=$((MAJOR + 1))
+                MINOR=0
+                PATCH=0
+                ;;
+              minor)
+                MINOR=$((MINOR + 1))
+                PATCH=0
+                ;;
+              patch)
+                PATCH=$((PATCH + 1))
+                ;;
+            esac
+            
+            NEW_VERSION="$MAJOR.$MINOR.$PATCH"
+            NEW_TAG="v$NEW_VERSION"
+          fi
+          
+          echo "New version: $NEW_VERSION"
+          echo "New tag: $NEW_TAG"
+          
+          # Check if tag already exists
+          if git rev-parse "$NEW_TAG" >/dev/null 2>&1; then
+            echo "Tag $NEW_TAG already exists, skipping..."
+            echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+            echo "tag=$NEW_TAG" >> $GITHUB_OUTPUT
+            echo "created=false" >> $GITHUB_OUTPUT
+          else
+            echo "version=$NEW_VERSION" >> $GITHUB_OUTPUT
+            echo "tag=$NEW_TAG" >> $GITHUB_OUTPUT
+            echo "created=true" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Generate commit list
+        if: steps.tag.outputs.created == 'true'
+        id: commits
+        run: |
+          # Get commits for tag annotation
+          LATEST_TAG=$(git describe --tags --abbrev=0 2>/dev/null || echo "")
+          
+          if [ -n "$LATEST_TAG" ] && [ "$LATEST_TAG" != "v0.0.0" ]; then
+            COMMITS=$(git log --oneline --pretty=format:"- %s" $LATEST_TAG..HEAD)
+          else
+            COMMITS=$(git log --oneline --pretty=format:"- %s" -10)
+          fi
+          
+          echo "commit_list<<EOF" >> $GITHUB_OUTPUT
+          echo "$COMMITS" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+          
+      - name: Create and push tag
+        if: steps.tag.outputs.created == 'true' && github.event.inputs.dry_run != 'true'
+        run: |
+          # Create annotated tag with commit list
+          TAG_MESSAGE="Release ${{ steps.tag.outputs.tag }}
+          
+          Changes since last release:
+          ${{ steps.commits.outputs.commit_list }}
+          
+          Generated by: Auto-tagging workflow
+          Date: $(date -u '+%Y-%m-%d %H:%M:%S UTC')
+          Commit: ${{ github.sha }}"
+          
+          git tag -a "${{ steps.tag.outputs.tag }}" -m "$TAG_MESSAGE"
+          git push origin "${{ steps.tag.outputs.tag }}"
+          
+          echo "Successfully created and pushed tag: ${{ steps.tag.outputs.tag }}"
+          
+      - name: Dry run summary
+        if: github.event.inputs.dry_run == 'true'
+        run: |
+          echo "=== DRY RUN MODE - NO TAGS CREATED ==="
+          echo "Would create tag: ${{ steps.tag.outputs.tag }}"
+          echo "Version: ${{ steps.tag.outputs.version }}"
+          echo "Commit list:"
+          echo "${{ steps.commits.outputs.commit_list }}"
+          echo "========================================"
+          
+      - name: Summary
+        run: |
+          echo "=== Auto-Tagging Summary ==="
+          echo "Repository: ${{ github.repository }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Version: ${{ steps.tag.outputs.version }}"
+          echo "Tag: ${{ steps.tag.outputs.tag }}"
+          echo "Created: ${{ steps.tag.outputs.created }}"
+          echo "Dry Run: ${{ github.event.inputs.dry_run || 'false' }}"
+          echo "Triggered by: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+          echo "============================="
+          
+      - name: Create summary comment
+        if: steps.tag.outputs.created == 'true' && github.event.inputs.dry_run != 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            
+            // Find the most recent commit
+            const commit = context.sha;
+            
+            try {
+              await github.rest.repos.createCommitComment({
+                owner,
+                repo,
+                commit_sha: commit,
+                body: `🏷️ **Auto-tagged as \`${{ steps.tag.outputs.tag }}\`**\n\nThis commit has been automatically tagged with semantic version \`${{ steps.tag.outputs.tag }}\`.\n\n**Changes included:**\n${{ steps.commits.outputs.commit_list }}\n\n---\n*Generated by Auto-Tagging workflow*`
+              });
+              
+              console.log('Comment added to commit successfully');
+            } catch (error) {
+              console.log('Failed to add commit comment:', error.message);
+            }
+            
+  trigger-release:
+    needs: auto-tag
+    runs-on: ubuntu-latest
+    if: needs.auto-tag.outputs.created == 'true' && github.event.inputs.dry_run != 'true'
+    
+    steps:
+      - name: Trigger release workflow
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            
+            // Trigger the release workflow
+            try {
+              await github.rest.actions.createWorkflowDispatch({
+                owner,
+                repo,
+                workflow_id: 'release.yml',
+                ref: 'main'
+              });
+              
+              console.log('Release workflow triggered successfully');
+            } catch (error) {
+              console.log('Failed to trigger release workflow:', error.message);
+              // Don't fail the job if release workflow doesn't exist
+            }
+            
+      - name: Log trigger attempt
+        run: |
+          echo "Attempted to trigger release workflow for tag: ${{ needs.auto-tag.outputs.tag }}"
+          echo "Tag creation status: ${{ needs.auto-tag.outputs.created }}"
