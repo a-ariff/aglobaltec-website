@@ -1,0 +1,243 @@
+name: Security Monitoring Webhook
+
+# Trigger on security-related events
+on:
+  # Dependabot security alerts
+  repository_vulnerability_alert:
+    types: [create, resolve]
+  
+  # When Dependabot opens/updates PRs
+  pull_request:
+    types: [opened, synchronize, closed]
+    branches: ['**']
+    # Only trigger for Dependabot PRs
+  
+  # Manual trigger for testing
+  workflow_dispatch:
+    inputs:
+      alert_type:
+        description: 'Type of security alert to simulate'
+        required: true
+        default: 'dependency_vulnerability'
+        type: choice
+        options:
+          - dependency_vulnerability
+          - code_vulnerability
+          - secret_detection
+  
+  # Security audit schedule
+  schedule:
+    - cron: '0 2 * * 1'  # Weekly on Monday at 2 AM UTC
+
+jobs:
+  security-monitor:
+    runs-on: ubuntu-latest
+    if: >
+      github.actor == 'dependabot[bot]' ||
+      github.event_name == 'repository_vulnerability_alert' ||
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule'
+    
+    permissions:
+      contents: read
+      security-events: read
+      issues: write
+      pull-requests: write
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Analyze security event
+        id: analyze
+        run: |
+          echo "Event: ${{ github.event_name }}"
+          echo "Actor: ${{ github.actor }}"
+          
+          # Determine alert type and severity
+          ALERT_TYPE="unknown"
+          SEVERITY="medium"
+          MESSAGE="Security event detected"
+          
+          if [[ "${{ github.event_name }}" == "repository_vulnerability_alert" ]]; then
+            ALERT_TYPE="vulnerability_alert"
+            SEVERITY="high"
+            MESSAGE="New vulnerability alert created in repository"
+          elif [[ "${{ github.actor }}" == "dependabot[bot]" ]]; then
+            ALERT_TYPE="dependency_update"
+            SEVERITY="medium"
+            if [[ "${{ github.event.pull_request.title }}" == *"security"* ]] || [[ "${{ github.event.pull_request.title }}" == *"Security"* ]]; then
+              SEVERITY="high"
+              MESSAGE="Dependabot security update PR: ${{ github.event.pull_request.title }}"
+            else
+              MESSAGE="Dependabot dependency update PR: ${{ github.event.pull_request.title }}"
+            fi
+          elif [[ "${{ github.event_name }}" == "workflow_dispatch" ]]; then
+            ALERT_TYPE="${{ github.event.inputs.alert_type }}"
+            SEVERITY="medium"
+            MESSAGE="Manual security monitoring triggered: ${{ github.event.inputs.alert_type }}"
+          elif [[ "${{ github.event_name }}" == "schedule" ]]; then
+            ALERT_TYPE="scheduled_audit"
+            SEVERITY="low"
+            MESSAGE="Weekly security audit scheduled check"
+          fi
+          
+          echo "alert_type=$ALERT_TYPE" >> $GITHUB_OUTPUT
+          echo "severity=$SEVERITY" >> $GITHUB_OUTPUT
+          echo "message=$MESSAGE" >> $GITHUB_OUTPUT
+      
+      - name: Setup Node.js for audit
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Run security audit
+        if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+        id: audit
+        run: |
+          # Run npm audit and capture results
+          if [ -f "package.json" ]; then
+            echo "Running npm audit..."
+            npm audit --audit-level=moderate --json > audit-results.json || true
+            
+            # Parse results
+            if [ -f "audit-results.json" ]; then
+              VULNERABILITIES=$(jq -r '.metadata.vulnerabilities | to_entries[] | "\(.key): \(.value)"' audit-results.json 2>/dev/null || echo "No vulnerabilities found")
+              TOTAL_VULNS=$(jq -r '.metadata.vulnerabilities.total // 0' audit-results.json 2>/dev/null || echo "0")
+              
+              echo "Total vulnerabilities: $TOTAL_VULNS"
+              echo "audit_results<<EOF" >> $GITHUB_OUTPUT
+              echo "$VULNERABILITIES" >> $GITHUB_OUTPUT
+              echo "EOF" >> $GITHUB_OUTPUT
+              echo "total_vulnerabilities=$TOTAL_VULNS" >> $GITHUB_OUTPUT
+            else
+              echo "audit_results=No package.json found or audit failed" >> $GITHUB_OUTPUT
+              echo "total_vulnerabilities=0" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "audit_results=No package.json found" >> $GITHUB_OUTPUT
+            echo "total_vulnerabilities=0" >> $GITHUB_OUTPUT
+          fi
+      
+      - name: Create security issue
+        if: >
+          (steps.analyze.outputs.severity == 'high' && github.event_name != 'pull_request') ||
+          (github.event_name == 'schedule' && steps.audit.outputs.total_vulnerabilities != '0')
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            
+            let title, body;
+            
+            if (context.eventName === 'schedule') {
+              title = `🔒 Weekly Security Audit Alert - ${new Date().toDateString()}`;
+              body = `## Security Audit Results
+              
+              **Date**: ${new Date().toISOString()}
+              **Total Vulnerabilities**: ${{ steps.audit.outputs.total_vulnerabilities }}
+              
+              ### Audit Details
+              \`\`\`
+              ${{ steps.audit.outputs.audit_results }}
+              \`\`\`
+              
+              **Action Required**: Please review and address these security vulnerabilities.
+              
+              ---
+              *This issue was automatically created by the Security Monitoring workflow.*`;
+            } else {
+              title = `🚨 Security Alert: ${{ steps.analyze.outputs.alert_type }}`;
+              body = `## Security Event Details
+              
+              **Alert Type**: ${{ steps.analyze.outputs.alert_type }}
+              **Severity**: ${{ steps.analyze.outputs.severity }}
+              **Message**: ${{ steps.analyze.outputs.message }}
+              **Timestamp**: ${new Date().toISOString()}
+              **Triggered by**: ${{ github.actor }}
+              
+              ### Event Information
+              - **Repository**: ${owner}/${repo}
+              - **Branch**: ${{ github.ref_name }}
+              - **Commit**: ${{ github.sha }}
+              
+              **Action Required**: Please investigate this security alert and take appropriate action.
+              
+              ---
+              *This issue was automatically created by the Security Monitoring webhook.*`;
+            }
+            
+            // Check if similar issue already exists (open)
+            const existingIssues = await github.rest.issues.listForRepo({
+              owner,
+              repo,
+              state: 'open',
+              labels: 'security,automated'
+            });
+            
+            const similarIssue = existingIssues.data.find(issue => 
+              issue.title.includes('Security Alert') || issue.title.includes('Security Audit')
+            );
+            
+            if (!similarIssue) {
+              await github.rest.issues.create({
+                owner,
+                repo,
+                title,
+                body,
+                labels: ['security', 'automated', 'needs-triage']
+              });
+              
+              console.log('Security issue created successfully');
+            } else {
+              console.log('Similar security issue already exists, skipping creation');
+            }
+      
+      - name: Add PR comment for security updates
+        if: github.event_name == 'pull_request' && github.actor == 'dependabot[bot]'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { owner, repo } = context.repo;
+            const prNumber = context.payload.pull_request.number;
+            const isSecurityUpdate = context.payload.pull_request.title.toLowerCase().includes('security');
+            
+            if (isSecurityUpdate) {
+              const comment = `## 🔒 Security Update Detected
+              
+              This Dependabot PR appears to address security vulnerabilities.
+              
+              **Recommended Actions:**
+              - Review the changes carefully
+              - Test thoroughly before merging
+              - Consider merging this update promptly to address security issues
+              
+              ---
+              *This comment was automatically added by the Security Monitoring workflow.*`;
+              
+              await github.rest.issues.createComment({
+                owner,
+                repo,
+                issue_number: prNumber,
+                body: comment
+              });
+            }
+      
+      - name: Log security event
+        run: |
+          echo "=== Security Event Summary ==="
+          echo "Type: ${{ steps.analyze.outputs.alert_type }}"
+          echo "Severity: ${{ steps.analyze.outputs.severity }}"
+          echo "Message: ${{ steps.analyze.outputs.message }}"
+          echo "Timestamp: $(date -u +\"%Y-%m-%d %H:%M:%S UTC\")"
+          echo "Repository: ${{ github.repository }}"
+          echo "Actor: ${{ github.actor }}"
+          echo "Event: ${{ github.event_name }}"
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "Total Vulnerabilities Found: ${{ steps.audit.outputs.total_vulnerabilities }}"
+          fi
+          echo "============================"
