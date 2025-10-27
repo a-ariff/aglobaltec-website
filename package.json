@@ -16,7 +16,7 @@
   "dependencies": {
     "@astrojs/cloudflare": "12.6.6",
     "@astrojs/mdx": "4.3.0",
-    "@astrojs/rss": "4.0.11",
+    "@astrojs/rss": "4.0.13",
     "@astrojs/sitemap": "3.4.1",
     "astro": "5.13.5",
     "typescript": "5.8.3"
